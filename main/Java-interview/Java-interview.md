@@ -496,7 +496,7 @@ private static int partition(int[] a, int l, int h) {
 
 **扩容规则**
 
-1. ArrayList() 会使用长度为零的数组
+1. ArrayList() 会使用长度为`零`的数组
 
 2. ArrayList(int initialCapacity) 会使用指定容量的数组
 
@@ -557,7 +557,7 @@ Fail-Fast 与 Fail-Safe
 3. 尾部插入、删除性能可以，其它部分插入、删除都会移动数据，因此性能会低
 4. 可以利用 cpu 缓存，局部性原理
 
-> ***代码说明***
+> *** 代码说明***
 >
 > * day01.list.ArrayListVsLinkedList#randomAccess 对比随机访问性能
 > * day01.list.ArrayListVsLinkedList#addMiddle 对比向中间插入性能
