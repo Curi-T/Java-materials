@@ -809,12 +809,13 @@ public class HashMapMutableKey {
 * 理解为何 DCL 实现时要使用 volatile 修饰静态变量
 * 了解 jdk 中用到单例的场景
 
-**饿汉式**
+### **饿汉式**
 
 ```java
 public class Singleton1 implements Serializable {
     private Singleton1() {
         if (INSTANCE != null) {
+            //	防止反射破坏单例
             throw new RuntimeException("单例对象不能重复创建");
         }
         System.out.println("private Singleton1()");
@@ -841,7 +842,7 @@ public class Singleton1 implements Serializable {
 
 
 
-**枚举饿汉式**
+### **枚举饿汉式**
 
 ```java
 public enum Singleton2 {
@@ -870,7 +871,7 @@ public enum Singleton2 {
 
 
 
-**懒汉式**
+### **懒汉式**
 
 ```java
 public class Singleton3 implements Serializable {
@@ -900,7 +901,7 @@ public class Singleton3 implements Serializable {
 
 
 
-**双检锁懒汉式**
+### **双检锁懒汉式**
 
 ```java
 public class Singleton4 implements Serializable {
@@ -934,7 +935,7 @@ public class Singleton4 implements Serializable {
 
 
 
-**内部类懒汉式**
+### **内部类懒汉式**
 
 ```java
 public class Singleton5 implements Serializable {
@@ -960,7 +961,7 @@ public class Singleton5 implements Serializable {
 
 
 
-**JDK 中单例的体现**
+### **JDK 中单例的体现**
 
 * Runtime 体现了饿汉式单例
 * Console 体现了双检锁懒汉式单例
@@ -1044,10 +1045,10 @@ public class Singleton5 implements Serializable {
 5. workQueue - 当没有空闲核心线程时，新来任务会加入到此队列排队，队列满会创建救急线程执行任务
 6. threadFactory 线程工厂 - 可以定制线程对象的创建，例如设置线程名字、是否是守护线程等
 7. handler 拒绝策略 - 当所有线程都在繁忙，workQueue 也放满时，会触发拒绝策略
-   1. 抛异常 java.util.concurrent.ThreadPoolExecutor.AbortPolicy
-   2. 由调用者执行任务 java.util.concurrent.ThreadPoolExecutor.CallerRunsPolicy
-   3. 丢弃任务 java.util.concurrent.ThreadPoolExecutor.DiscardPolicy
-   4. 丢弃最早排队任务 java.util.concurrent.ThreadPoolExecutor.DiscardOldestPolicy
+   1. 抛异常 java.util.concurrent.`ThreadPoolExecutor.AbortPolicy`
+   2. 由调用者执行任务 java.util.concurrent.`ThreadPoolExecutor.CallerRunsPolicy`
+   3. 丢弃任务 java.util.concurrent.`ThreadPoolExecutor.DiscardPolicy`
+   4. 丢弃最早排队任务 java.util.concurrent.`ThreadPoolExecutor.DiscardOldestPolicy`
 
 ![image-20210831093204388](Java-interview.assets/image-20210831093204388.png)
 
@@ -1981,7 +1982,7 @@ refresh 是 AbstractApplicationContext 中的一个方法，负责初始化 Appl
 
 
 
-**1. prepareRefresh**
+### **1. prepareRefresh**
 
 * 这一步创建和准备了 Environment 对象，它作为 ApplicationContext 的一个成员变量
 
@@ -1993,7 +1994,7 @@ refresh 是 AbstractApplicationContext 中的一个方法，负责初始化 Appl
 
 ![image-20210902181639048](Java-interview.assets/image-20210902181639048.png)
 
-**2. obtainFreshBeanFactory**
+### **2. obtainFreshBeanFactory**
 
 * 这一步获取（或创建） BeanFactory，它也是作为 ApplicationContext 的一个成员变量
 * BeanFactory 的作用是负责 bean 的创建、依赖注入和初始化，bean 的各项特征由 BeanDefinition 定义
@@ -2003,7 +2004,7 @@ refresh 是 AbstractApplicationContext 中的一个方法，负责初始化 Appl
 
 ![image-20210902182004819](Java-interview.assets/image-20210902182004819.png)
 
-**3. prepareBeanFactory**
+### **3. prepareBeanFactory**
 
 * 这一步会进一步完善 BeanFactory，为它的各项成员变量赋值
 * beanExpressionResolver 用来解析 SpEL，常见实现为 StandardBeanExpressionResolver
@@ -2017,13 +2018,13 @@ refresh 是 AbstractApplicationContext 中的一个方法，负责初始化 Appl
 
 ![image-20210902182541925](Java-interview.assets/image-20210902182541925.png)
 
-**4. postProcessBeanFactory**
+### **4. postProcessBeanFactory**
 
 * 这一步是空实现，留给子类扩展。
   * 一般 Web 环境的 ApplicationContext 都要利用它注册新的 Scope，完善 Web 下的 BeanFactory
 * 这里体现的是模板方法设计模式
 
-**5. invokeBeanFactoryPostProcessors**
+### **5. invokeBeanFactoryPostProcessors**
 
 * 这一步会调用 beanFactory 后处理器
 * beanFactory 后处理器，充当 beanFactory 的扩展点，可以用来补充或修改 BeanDefinition
@@ -2034,7 +2035,7 @@ refresh 是 AbstractApplicationContext 中的一个方法，负责初始化 Appl
 
 ![image-20210902183232114](Java-interview.assets/image-20210902183232114.png)
 
-**6. registerBeanPostProcessors**
+### **6. registerBeanPostProcessors**
 
 * 这一步是继续从 beanFactory 中找出 bean 后处理器，添加至 beanPostProcessors 集合中
 * bean 后处理器，充当 bean 的扩展点，可以工作在 bean 的实例化、依赖注入、初始化阶段，常见的有：
@@ -2044,14 +2045,14 @@ refresh 是 AbstractApplicationContext 中的一个方法，负责初始化 Appl
 
 ![image-20210902183520307](Java-interview.assets/image-20210902183520307.png)
 
-**7. initMessageSource**
+### **7. initMessageSource**
 
 * 这一步是为 ApplicationContext 添加 messageSource 成员，实现国际化功能
 * 去 beanFactory 内找名为 messageSource 的 bean，如果没有，则提供空的 MessageSource 实现
 
 ![image-20210902183819984](Java-interview.assets/image-20210902183819984.png)
 
-**8. initApplicationContextEventMulticaster**
+### **8. initApplicationContextEventMulticaster**
 
 * 这一步为 ApplicationContext 添加事件广播器成员，即 applicationContextEventMulticaster
 * 它的作用是发布事件给监听器
@@ -2060,13 +2061,13 @@ refresh 是 AbstractApplicationContext 中的一个方法，负责初始化 Appl
 
 ![image-20210902183943469](Java-interview.assets/image-20210902183943469.png)
 
-**9. onRefresh**
+### **9. onRefresh**
 
 * 这一步是空实现，留给子类扩展
   * SpringBoot 中的子类在这里准备了 WebServer，即内嵌 web 容器
 * 体现的是模板方法设计模式
 
-**10. registerListeners**
+### **10. registerListeners**
 
 * 这一步会从多种途径找到事件监听器，并添加至 applicationEventMulticaster
 * 事件监听器顾名思义，用来接收事件广播器发布的事件，有如下来源
@@ -2077,7 +2078,7 @@ refresh 是 AbstractApplicationContext 中的一个方法，负责初始化 Appl
 
 ![image-20210902184343872](Java-interview.assets/image-20210902184343872.png)
 
-**11. finishBeanFactoryInitialization**
+### **11. finishBeanFactoryInitialization**
 
 * 这一步会将 beanFactory 的成员补充完毕，并初始化所有非延迟单例 bean
 * conversionService 也是一套转换机制，作为对 PropertyEditor 的补充
@@ -2087,7 +2088,7 @@ refresh 是 AbstractApplicationContext 中的一个方法，负责初始化 Appl
 
 ![image-20210902184641623](Java-interview.assets/image-20210902184641623.png)
 
-**12. finishRefresh**
+### **12. finishRefresh**
 
 * 这一步会为 ApplicationContext 添加 lifecycleProcessor 成员，用来控制容器内需要生命周期管理的 bean
 * 如果容器中有名称为 lifecycleProcessor 的 bean 就用它，否则创建默认的生命周期管理器

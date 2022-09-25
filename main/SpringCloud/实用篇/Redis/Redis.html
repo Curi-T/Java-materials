@@ -1,0 +1,990 @@
+<!doctype html>
+<html style='font-size:18px !important'>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<link href="https://gitee.com/curit/test-project/raw/master/src/main/resources/CuriT-icon/CuriT-transparent-T.png" rel="shortcut icon">
+<style>
+#O-switch, .typora-export-sidebar {
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    -khtml-user-select: none; 
+    user-select: none;
+}
+</style>
+<link href='https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap' rel='stylesheet' type='text/css' /><link href='https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500&display=swap' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+/* 基于 rainbow 主题 */
+/*
+fonts initalization
+*/
+@import url(https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500&display=swap);
+
+@page {
+	size: A4;
+	margin: 8mm 0mm;
+}
+
+/*
+root variables including colors, font-familys and a shadow style
+*/
+:root {
+	--bg-color: #f3f2ee;
+	--font--family: "宋体", "思源黑体 CN", "微软雅黑";
+	--monospace-font: "Source Code Pro Regular", "Source Code Pro", monospace;
+	--font--family-h1: "方正楷体_GBK", "微软雅黑";
+	--font--family-h2: "华康手札体W5P", "微软雅黑";
+
+	--color--h2--quote: #2d7d59;
+	/* 二级标题背景颜色、引用侧边颜色*/
+	--color--quote--backgroudn: rgba(66, 185, 131, 0.1);
+	/*引用背景颜色*/
+	--color--h--focus: #ff5d52;
+	/* 标题点击后的前缀提示颜色 */
+
+	--color--inlinecode--font: #D83B64;
+	/*行内代码字体颜色*/
+	--color--inlinecode--background: #f9f2f4;
+	/*行内代码背景2颜色*/
+	--color--url: #659ddc;
+	/*超链接字体颜色*/
+	--color--url--focus: #f60;
+	/*选中的超链接后的填充颜色*/
+	--color--url--focus--font: #ffffffe6;
+	/*选中的超链接后的字体颜色*/
+	--color--highlight: #ffff00;
+	/*高亮颜色*/
+	--del-color: rgb(151, 151, 151);
+	/*删除线颜色*/
+	--italic-color: gray;
+	/*斜体颜色*/
+	--strong-color: brown;
+	/*粗体颜色*/
+	--underline-color: #f00;
+	/*下划线颜色*/
+	--ol-color: #81accf;
+	/* 有序列表前缀颜色 */
+	--olfore-color: #fff;
+	/* 有序列表字体颜色 */
+
+	--h-border-color: rgb(255, 191, 191);
+	--h-bg-color: rgb(255, 232, 232);
+	--table-border-color: rgb(255, 235, 211);
+	--th-bg-color: rgb(255, 243, 228);
+	--tr-bg-color: rgb(255, 249, 242);
+	--tr-hover-bg-color: rgb(254, 255, 230);
+	--code-bg-color: rgb(247, 247, 247);
+
+	--selection-bg-color: rgb(235, 227, 255);
+	--block-shadow: 0.15rem 0.15rem 0.5rem rgb(150, 150, 150);
+
+	--focus-color: #ff5d52; /* 点击某些元素（如标题）显示的颜色（偏红） */
+	--ulol-color: #81accf; /* 有序无序列表前缀颜色（灰色） */
+    --olfore-color: #fff; /* 有序列表字体颜色（白色） */
+    --taskborder-color: #81accf; /* 任务列表边框色（红色） */
+    --taskfocus-color: #81accf; /* 任务列表选中填充色（绿色） */
+
+}
+
+html {
+	background-color: #f3f2ee;
+	font-size: 16px;
+}
+
+body {
+	background-color: #f3f2ee;
+}
+
+
+#write {
+	font-family: var(--font--family);
+	max-width: 60rem;
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+/*
+yaml header settings
+*/
+#write pre.md-meta-block {
+	font-family: var(--monospace-font);
+	font-size: 1rem;
+	text-align: left;
+	padding: 0.6rem;
+	color: rgb(134, 134, 134);
+	background-color: var(--code-bg-color);
+	border-radius: 0.4rem;
+}
+
+/*
+headers settings
+标题
+*/
+#write h1 {
+	font-size: 1.75rem;
+	text-align: center;
+	font-family: var(--font--family-h1);
+}
+
+#write h2 {
+	font-size: 1.5rem;
+	border-bottom: 2px solid var(--color--h2--quote);
+	font-family: var(--font--family-h2);
+}
+
+#write h2 span {
+	display: inline-block;
+	font-weight: bold;
+	background: var(--color--h2--quote);
+	color: #ffffff;
+	padding: 3px 10px 1px;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+	margin-right: 3px;
+}
+
+#write h2:after {
+	display: inline-block;
+	content: "";
+	vertical-align: bottom;
+	border-bottom: 36px solid #efebe9;
+	border-right: 20px solid transparent;
+}
+
+h3 {
+	font-size: 1.3em;
+	line-height: 1.43;
+	margin: 1.6em auto 1.2em;
+	padding-left: 8px;
+	border-left: 4px solid var(--color--h2--quote);
+}
+
+#write>h3.md-focus {
+	border-color: var(--color--h--focus);
+}
+
+#write h4 {
+	font-size: 1.15rem;
+}
+
+#write h5 {
+	font-size: 1rem;
+}
+
+#write h6 {
+	font-size: 1rem;
+}
+
+/* 标题点击后的前缀提示图标 */
+#write>h3.md-focus:before {
+	width: auto;
+	height: auto;
+	background-color: var(--color--h--focus);
+	color: #ffffff;
+}
+
+#write>h4.md-focus:before {
+	width: auto;
+	height: auto;
+	background-color: #ff5d52;
+	color: #ffffff;
+	margin-top: -1px;
+}
+
+#write h5.md-focus:before,
+#write h6.md-focus:before {
+	margin-top: 6px;
+	color: #ff5d52;
+	font-size: 0.4rem;
+}
+
+/*
+tables settings
+表格
+*/
+#write table {
+	display: table;
+	text-align: left;
+}
+
+#write tbody {
+	border: 0;
+}
+
+#write table tr {
+	border: 0;
+	border-top: 1px solid #ccc;
+	background-color: white;
+}
+
+#write table tr:nth-child(2n) {
+	background-color: #F8F8F8;
+}
+
+#write table tr th,
+#write table tr td {
+	font-size: 16px;
+	border: 1px solid #ccc;
+	padding: 5px 10px;
+	text-align: left;
+}
+
+#write table tr th {
+	font-weight: bold;
+	background-color: #f0f0f0;
+}
+
+/*
+checkboxes settings
+任务列表
+*/
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: 0.4rem;
+    -webkit-appearance: none;
+}
+
+/* 任务列表未选中 */
+#write .task-list-item input[type="checkbox"]::before,
+#write input[type="checkbox"]:checked::before {
+	content: "";
+	display: inline-block;
+
+	/*圆形框*/
+	border-radius: 1.1rem;
+
+	/* 方形框 */
+	/* border-radius: 0.1rem; */
+	vertical-align: middle;
+	border: 1.2px solid #81accf;
+	background-color: #ffffff;
+	width: 1.1rem;
+	height: 1.1rem;
+	margin-left: -1px;
+	margin-right: 0.1rem;
+	margin-top: -0.19rem;
+}
+
+/* 任务列表选中 */
+#write .task-list-item input[type="checkbox"]:checked::before {
+	padding-left: 0.125em;
+	padding-top: 0em;
+	content: '✔';
+	color: white;
+	background-color: #81accf;
+	font-size: 0.8rem;
+	line-height: 0.95rem;
+	margin-left: -1px;
+	margin-right: 0.1rem;
+	margin-top: -0.19rem;
+	transition: background-color 200ms ease-in-out;
+}
+
+#write .task-list-item input[type="checkbox"]:checked+p {
+	text-decoration: line-through;
+	color: var(--del-color);
+}
+
+#write input[type='checkbox']:hover::before {
+	transition: all 0.2s;
+	background-color: rgb(228, 228, 228);
+}
+
+/** 有序、无序列表 **/
+/* 有序列表在加入换行后重新计数了，故注释了，待修复 */
+/* #write ol li,
+#write .ol .li, */
+#write ul li,
+#write .ul .li {
+	list-style-type: none;
+}
+
+#write ul>li:not(.tab):before,
+#write .ul>.li:not(.tab):before {
+	margin-left: -18px;
+	margin-top: 7px;
+	width: .62em;
+	height: .62em;
+	border: .1em solid var(--ulol-color);
+
+	border-radius: .31em;
+	background: 0 0;
+	content: '';
+	line-height: .42em;
+}
+
+/* #write ol li:before,
+#write .ol .li:before, */
+#write ul li:before,
+#write .ul .li:before {
+	position: absolute;
+	background: var(--ulol-color);
+	color: var(--olfore-color);
+	cursor: pointer;
+	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	-o-transition: all .3s ease-out;
+	-ms-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+}
+
+/* #write ol li:first-child,
+#write .ol .li:first-child {
+	counter-reset: li;
+} */
+
+/* #write ol>li:before,
+#write .ol>.li:before {
+	margin-top: 3.8px;
+	margin-left: -21px;
+	width: 1.65em;
+	height: 1.65em;
+	border-radius: 0.825em;
+	content: counter(li);
+	counter-increment: li;
+	text-align: center;
+	font-size: .65em;
+	line-height: 1.7em;
+} */
+
+/* 列表子项上下间隔调整 */
+/* #write ol li *,
+#write .ol .li *  */
+#write ul li *,
+#write .ul .li * {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+/* 列表上下间隔调整 */
+
+/* #write ol li,
+#write .ol .li, */
+#write ul li,
+#write .ul .li {
+	margin-top: 7px;
+	margin-bottom: 7px;
+}
+
+
+/*
+blockquotes settings
+引用
+*/
+#write blockquote {
+	color: #7e7a7a;
+	border-left: 0.25rem solid var(--color--h2--quote);
+	background: var(--color--quote--backgroudn);
+	padding: 0.25rem 0.5rem;
+	border-radius: 0.25rem;
+}
+
+/* 引用中的彩虹 */
+#write blockquote::before {
+	display: block;
+	height: 2rem;
+	width: 1.5rem;
+	content: "🌈";
+	font-size: 1.2rem;
+}
+
+/* 引用内单行代码 */
+#write blockquote code {
+	background-color: transparent;
+}
+
+/*
+horizontal rules settings
+*/
+#write hr {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	background-color: rgb(226, 226, 226);
+	height: 0.13rem;
+	border: 0;
+}
+
+
+/*
+code blocks settings
+代码块
+*/
+#write .md-fences {
+	font-family: var(--monospace-font);
+	font-size: 1rem;
+	padding: 0.6rem;
+	background-color: var(--code-bg-color);
+	border-radius: 0.4rem;
+	box-shadow: var(--block-shadow);
+}
+
+#write .cm-s-inner .CodeMirror-gutters {
+	border: none;
+}
+
+#write .cm-s-inner .CodeMirror-linenumber {
+	color: rgb(212, 212, 212);
+}
+
+#write .cm-s-inner .cm-keyword {
+	color: rgb(204, 35, 35);
+}
+
+#write .cm-s-inner .cm-number {
+	color: rgb(27, 57, 226);
+}
+
+#write .cm-s-inner .cm-def {
+	color: rgb(146, 50, 255);
+}
+
+#write .cm-s-inner .cm-operator {
+	color: rgb(204, 35, 35);
+}
+
+#write .cm-s-inner .cm-variable2 {
+	color: rgb(38, 129, 219);
+}
+
+#write .cm-s-inner .cm-variable3 {
+	color: rgb(204, 35, 35);
+}
+
+#write .cm-s-inner .cm-comment {
+	color: rgb(18, 129, 18);
+}
+
+#write .cm-s-inner .cm-string {
+	color: rgb(18, 129, 18);
+}
+
+#write .cm-s-inner .cm-builtin {
+	color: rgb(218, 135, 12);
+}
+
+#write .cm-tag {
+	color: rgb(139, 10, 10);
+}
+
+/*
+formulas settings
+*/
+#write mjx-container {
+	font-size: 1.1rem;
+}
+
+/*
+tooltips settings
+*/
+#write .code-tooltip {
+	box-shadow: 0.1rem 0.1rem 0.2rem rgb(150, 150, 150);
+	border-radius: 0.2rem;
+	margin-top: 0.3rem;
+}
+
+/*
+selected texts in code blocks settings
+*/
+#write .CodeMirror-selected,
+#write .CodeMirror-selectedtext,
+#write .in-text-selection {
+	background-color: var(--selection-bg-color) !important;
+}
+/*
+selected texts settings
+文本选中后的颜色
+*/
+#write ::selection {
+	background-color: var(--selection-bg-color);
+}
+
+/*
+diagrams settings
+*/
+#write pre[lang=’sequence’],
+#write pre[lang=’flow’],
+#write pre[lang=’mermaid’] {
+	background-color: var(--code-bg-color);
+	border-radius: 0.4rem;
+	box-shadow: var(--block-shadow);
+}
+
+/*
+inline codes settings
+行内代码
+*/
+#write code {
+	font-family: var(--monospace-font);
+	padding: 0.05rem 0.12rem;
+	color: var(--color--inlinecode--font);
+	background-color: var(--color--inlinecode--background);
+	border-radius: 0.4rem;
+}
+
+/*
+urls settings
+超链接
+*/
+#write a {
+	color: var(--color--url);
+	text-decoration: none;
+}
+
+#write a:hover {
+	border-radius: 6px;
+	border-bottom: 2px solid transparent;
+	background-color: var(--color--url--focus);
+	color: var(--color--url--focus--font) !important;
+	cursor: pointer;
+	padding: 2.5px 2.5px;
+	font-size: 1rem;
+}
+
+/*
+images settings
+图像
+*/
+#write img {
+	display: block;
+	margin: 0 auto;
+	border: 0;
+	border-radius: 12px;
+	box-shadow: var(--block-shadow);
+	margin-bottom: 4px;
+}
+
+/*
+deletes settings
+删除线
+*/
+#write del {
+	color: var(--del-color);
+}
+
+
+kbd {
+	background-color: rgb(255, 255, 255);
+	border-radius: 8px;
+	color: black;
+	padding: 1px 4px;
+	font-family: "微软雅黑";
+	font-size: 0.8rem;
+	border-top: 1px solid #cfcfcf;
+	border-left: 1px solid #cfcfcf;
+	border-right: 1px solid #cfcfcf;
+	border-bottom: 3px solid #cfcfcf;
+}
+
+/* 斜体 */
+em {
+	font-style: normal;
+	color: var(--italic-color);
+}
+
+/* 粗体 */
+strong {
+	background-color: inherit;
+	color: var(--strong-color);
+}
+
+/* 下划线 */
+u {
+	background-color: inherit;
+	color: inherit;
+	text-decoration: none;
+	border-bottom: 2px solid var(--underline-color);
+	padding-bottom: 1px;
+}
+
+/* 高亮 */
+mark {
+	color: black;
+	font-weight: normal;
+	padding: 1px 5px 2px;
+	border-radius: 2px;
+	background-color: var(--color--highlight) !important;
+}
+
+/* sidebar	侧边栏 */
+#typora-sidebar {
+	background-color: #f3f2ee;
+	/* 分割线 */
+	border-right: 1px dashed #C0C0C0;
+}
+
+#typora-sidebar #sidebar-loading-template.file-list-item {
+	border-bottom: transparent !important;
+	background-color: rgba(171, 192, 208, 0.1);
+}
+
+#typora-sidebar .info-panel-tab-wrapper .info-panel-tab:hover {
+	color: inherit;
+}
+
+#typora-sidebar .info-panel-tab-wrapper .info-panel-tab .info-panel-tab-border {
+	background-color: #2f845e;
+	border-radius: 4px;
+}
+
+#typora-sidebar .sidebar-osx-tab .sidebar-tabs {
+	border-bottom-color: transparent;
+}
+
+#typora-sidebar #sidebar-content .file-list-item {
+	border-bottom: 1px solid #eee;
+}
+
+#typora-sidebar #sidebar-content .file-list-item.active {
+	background-color: rgba(66, 185, 131, 0.1);
+	border-left: 4px solid #2f845e;
+}
+
+#typora-sidebar #sidebar-content .ty-sidebar-search-panel {
+	border-bottom: 1px solid #eee;
+}
+
+#typora-sidebar #sidebar-content .ty-sidebar-search-panel .searchpanel-search-option-btn {
+	background-color: #fff;
+}
+
+#typora-sidebar #sidebar-content .sidebar-content-content .file-node-content {
+	line-height: 1.375rem;
+	font-size: 1rem;
+	color: #282c34 !important;
+}
+
+#typora-sidebar #sidebar-content .sidebar-content-content .file-tree-node:not(.file-node-root):hover>.file-node-background {
+	border-left: 4px solid #2f845e;
+	background-color: rgba(66, 185, 131, 0.1);
+}
+
+#typora-sidebar #sidebar-content .sidebar-content-content .file-tree-node.active>.file-node-background {
+	border-color: #2f845e;
+	background-color: rgba(66, 185, 131, 0.1);
+}
+
+#typora-sidebar #sidebar-content .sidebar-content-content #file-library-list-children .file-library-file-node:hover {
+	border-left: 4px solid #2f845e;
+	background-color: rgba(66, 185, 131, 0.1);
+}
+
+#typora-sidebar #sidebar-content #outline-content .no-collapse-outline .outline-item {
+	line-height: 1.375rem;
+	font-size: 1rem;
+}
+
+#typora-sidebar #sidebar-content #outline-content .outline-expander:before {
+	color: inherit;
+	font-size: 14px;
+	top: auto;
+	content: "\f0da";
+	font-family: FontAwesome;
+}
+
+#typora-sidebar #sidebar-content #outline-content .outline-expander:hover:before,
+#typora-sidebar #sidebar-content #outline-content .outline-item-open>.outline-item>.outline-expander:before {
+	content: "\f0d7";
+}
+
+#typora-sidebar #sidebar-content #outline-content .outline-item:hover {
+	background-color: #bac6e9 !important;
+}
+
+#typora-sidebar #ty-sidebar-footer {
+	border-top: 1px solid #eee;
+}
+
+#typora-sidebar #ty-sidebar-footer .sidebar-footer-item:hover {
+	background-color: #bac6e9 !important;
+}
+
+#typora-sidebar #ty-sidebar-footer #sidebar-files-menu {
+	-webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+
+/* mac 风格 */
+#write pre.md-fences {
+	padding: 1rem 0.5rem 1rem;
+	display: block;
+	-webkit-overflow-scrolling: touch;
+	/* box-shadow: 0 0 6px 2px rgba(151, 151, 151, 0.9); */
+	/* border-top: rgb(51, 51, 51) solid 24px; */
+	border-top: rgb(244, 244, 244) solid 24px;
+	background-color: rgb(244, 244, 244);
+}
+
+pre.md-fences::before {
+	content: '';
+	background: #fc625d;
+	box-shadow: 23px 0 #fdbc40, 45px 0 #35cd4b;
+	border-radius: 50%;
+	margin-top: -1.73rem;
+	position: absolute;
+	left: 15px;
+	height: 12px;
+	width: 12px;
+}
+
+
+/** 图片 **/
+
+/* 图片自动编号 */
+#write {
+    counter-reset: imgNum;
+}
+
+#write p>.md-image:after {
+    counter-increment: imgNum;
+    content: "图 " counter(imgNum) attr(alt) !important;
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    margin-top: 8px !important;
+    font-size: small;
+	font-family:"华康手札体W5P";
+    font-size:1rem;
+	color:gray;
+}
+
+
+</style><title>Redis</title>
+</head>
+<body class='typora-export os-windows typora-export-show-outline typora-export-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h1 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#redis-1">Redis</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#redis-2">Redis</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#什么是redis">什么是Redis？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#redis和memcached的区别">Redis和Memcached的区别</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#redis的事务">Redis的事务</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#redis的数据类型">Redis的数据类型</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#reids的同步机制">Reids的同步机制</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#redis的主从复制">Redis的主从复制</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#redis的哨兵模式">Redis的哨兵模式</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#redis的分片集群">Redis的分片集群</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#redis的线程模型">Redis的线程模型</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#redis的持久化机制">Redis的持久化机制</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#redis的过期策略以及内存淘汰机制">Redis的过期策略以及内存淘汰机制</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#bigkey">BigKey</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#单点redis的问题及解决方案">单点Redis的问题及解决方案</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#什么是-bigkey会存在什么影响">什么是 bigkey？会存在什么影响？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#为什么要用redis">为什么要用Redis？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#为什么redis这么快-1">为什么Redis这么快？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#为什么redis的key最大为512mb">为什么Redis的key最大为512MB?</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#为什么redis这么快-2">为什么Redis这么快？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#为什么-redis-把所有数据放到内存中">为什么 Redis 把所有数据放到内存中？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#为什么要用-pipeline">为什么要用 pipeline？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#为什么redis的操作是原子性的怎么保证原子性的">为什么Redis的操作是原子性的，怎么保证原子性的？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#redis产生的问题及解决方案">Redis产生的问题及解决方案？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#什么是发布订阅">什么是发布订阅？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#redis内存不足">Redis内存不足？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#如何解决key冲突">如何解决key冲突？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#如何提高缓存命中率">如何提高缓存命中率？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#keys和scan的区别">keys和scan的区别？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#是否使用过-redis-cluster-集群集群的原理是什么">是否使用过 Redis Cluster 集群，集群的原理是什么？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#redis-cluster-集群方案什么情况下会导致整个集群不可用">Redis Cluster 集群方案什么情况下会导致整个集群不可用？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#redis-常见性能问题和解决方案有哪些">Redis 常见性能问题和解决方案有哪些？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#什么情况下可能会导致-redis-阻塞">什么情况下可能会导致 Redis 阻塞？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#怎么使用-redis-实现消息队列">怎么使用 Redis 实现消息队列？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#pub--sub-有什么缺点">pub / sub 有什么缺点？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#redis-如何实现延时队列">Redis 如何实现延时队列？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#redis-是单线程还是多线程-1">Redis 是单线程还是多线程？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#selectpollepoll的区别">select、poll、epoll的区别？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#save和bgsave的区别">save和bgsave的区别？</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#redis-是单线程还是多线程-2">Redis 是单线程还是多线程？</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#自由主题">自由主题</a></div><ul class="outline-children"></ul></li></ul></li></div></div><div id='write'  class=''><h1 id='redis-1'><span>Redis</span></h1><h2 id='redis-2'><span>Redis</span></h2><h3 id='什么是redis'><span>什么是Redis？</span></h3><ul><li><span>一个开源（BSD 许可）、基于内存、支持多种数据结构的存储系统，可以作为数据库、缓存和消息中间件。</span></li></ul><h3 id='redis和memcached的区别'><span>Redis和Memcached的区别</span></h3><ul><li><span>memcached仅支持key-value的数据结构，redis支持更多的数据结构（string,list,hash,sorted set,set）</span></li><li><span>redis可以持久化其数据（AOF,RDB）</span></li><li><span>虚拟内存--redis当物理内存用完时，可以将一些很久没用到的value 交换到磁盘</span></li><li><span>都可以一主一从， Memcached 还可用于缓存其他东西，例如图片、视频等</span></li><li><span>Memcached是多线程非阻塞式的网络I/O模型；Redis是单线程非阻塞式的网络I/O模型</span></li></ul><h3 id='redis的事务'><span>Redis的事务</span></h3><ul><li><p><span>定义</span></p><ul><li><span>一组命令的集合，是 Redis 的最小执行单位。它可以保证一次执行多个命令，每个事务是一个单独的隔离操作，事务中的所有命令都会序列化、按顺序地执行。</span></li></ul></li><li><p><span>原理</span></p><ul><li><span>通过MULTI、EXEC、DISCARD和WATCH 四个原语实现，将事务中的命令序列化，然后顺序执行。</span></li><li><span>将属于一个事务的命令发送给 Redis，然后依次执行这些命令</span></li></ul></li><li><p><span>特性</span></p><ul><li><p><span>单独的隔离操作</span></p><ul><li><span>事务中的所有命令都会序列化、按顺序地执行。事务在执行的过程中，不会被其他客户端发送来的命令请求所打断。</span></li></ul></li><li><p><span>没有隔离级别的概念</span></p><ul><li><span>队列中的命令没有提交之前都不会实际被执行，因为事务提交前任何指令都不会被实际执行</span></li></ul></li><li><p><span>不保证原子性</span></p><ul><li><span>事务中如果有一条命令执行失败，其后的命令仍然会被执行，没有回滚</span></li></ul></li></ul></li><li><p><span>实现原语</span></p><ul><li><p><span>multi</span></p><ul><li><span>用于开启一个事务，它总是返回OK。 MULTI执行之后，客户端可以继续向服务器发送任意多条命令，这些命令不会立即被执行，而是被放到一个队列中，当EXEC命令被调用时，所有队列中的命令才会被执行。</span></li></ul></li><li><p><span>exec</span></p><ul><li><span>执行所有事务块内的命令。返回事务块内所有命令的返回值，按命令执行的先后顺序排列。 当操作被打断时，返回空值 nil 。</span></li></ul></li><li><p><span>discard</span></p><ul><li><span>通过调用DISCARD，客户端可以清空事务队列，并放弃执行事务， 并且客户端会从事务状态中退出。</span></li></ul></li><li><p><span>watch</span></p><ul><li><span>WATCH 命令可以为 Redis 事务提供 check-and-set （CAS）行为。 可以监控一个或多个键，一旦其中有一个键被修改（或删除），之后的事务就不会执行，监控一直持续到EXEC命令。</span></li></ul></li><li><p><span>unwatch</span></p><ul><li><span>解除监控</span></li></ul></li></ul></li><li><p><span>注意点</span></p><ul><li><span>1、Redis 事务是不支持回滚的，不像 MySQL 的事务一样，要么都执行要么都不执行</span></li><li><span>2、Redis 服务端在执行事务的过程中，不会被其他客户端发送来的命令请求打断。直到事务命令全部执行完毕才会执行其他客户端的命令。</span></li><li><span>3、如果在一个事务中的命令出现错误，那么所有的命令都不会执行（命令参数错误等）</span></li><li><span>4、如果在一个事务中出现运行错误，那么正确的命令会被执行（例如操作不同）</span></li></ul></li><li><p><span>为什么不支持回滚？</span></p><ul><li><span>（1）只有当被调用的Redis命令有语法错误时，或者对某个键执行不符合其数据类型的操作，这条命令才会执行失败。但是如果出现其他问题，则依然会继续执行余下的命令。</span></li><li><span>（2）这些问题可以从程序层面捕获并解决，很少在生产环境发现</span></li><li><span>（3）回滚需要增加很多工作，而不支持回滚则可以保持简单、快速的特性。</span></li></ul></li><li><p><span>秒杀案例</span></p><ul><li><p><span>产生的问题</span></p><ul><li><p><span>超时</span></p><ul><li><p><span>每个线程调用redis都要使用jedis连接，导致连接超时</span></p></li><li><p><span>解决方案</span></p><ul><li><span>线程池</span></li></ul></li></ul></li><li><p><span>超卖</span></p><ul><li><p><span>定义</span></p><ul><li><span>多线程下操作数据，虽然数据已经为空，有些线程还在进行，继续操作导致</span></li></ul></li><li><p><span>解决方案</span></p><ul><li><p><span>使用redis事务(watch)</span></p><ul><li><span>库存数量被修改，执行失败</span></li></ul></li><li><p><span>redis分布式锁</span></p><ul><li><span>setex加锁并且自动释放锁</span></li></ul></li><li><p><span>redis队列（rpoplpush的安全队列）</span></p><ul><li><span>把每一件商品都lpush到redis队列中，利用lpop从队列中去取</span></li></ul></li></ul></li></ul></li><li><p><span>一人一单</span></p><ul><li><p><span>用户重复下单</span></p></li><li><p><span>解决方案</span></p><ul><li><span>用户下单成功后将用户id存入一个set集合，每次下单前判断用户是否已经购买</span></li><li><span>使用Lua脚本，从判断库存是否充足，到判断是否重复下单（ismember），再到扣减库存都要成为原子性的操作</span></li></ul></li></ul></li><li><p><span>库存遗留</span></p><ul><li><p><span>定义</span></p><ul><li><span>使用redis事务时，采用的是乐观锁，当某个线程将数据修改后把版本号+1，后续其它线程会因为版本不一致而无法对数据进行修改</span></li></ul></li><li><p><span>解决方案</span></p><ul><li><p><span>使用LUA脚本</span></p><ul><li><span>将复杂的或者多步的redis操作，写为一个脚本，一次提交给redis执行，减少反复连接redis的次数。提升性能</span></li><li><span>LUA脚本是类似redis事务，有一定的原子性，不会被其他命令插队，可以完成一些redis事务性的操作</span></li><li><span>lua脚本解决争抢问题，实际上是redis 利用其单线程的特性，用任务队列的方式解决多任务并发问题</span></li></ul></li></ul></li></ul></li></ul></li><li><p><span>Jedis连接池</span></p><ul><li><p><span>参数</span></p><ul><li><p><span>MaxTotal</span></p><ul><li><span>控制一个pool可分配多少个jedis实例</span></li></ul></li><li><p><span>maxIdle</span></p><ul><li><span>制一个pool最多有多少个状态为idle(空闲)的jedis实例</span></li></ul></li><li><p><span>MaxWaitMillis</span></p><ul><li><span>表示取一个jedis实例时，最大的等待毫秒数</span></li></ul></li><li><p><span>testOnBorrow</span></p><ul><li><span>获得一个jedis实例的时候是否检查连接可用性（ping()）</span></li></ul></li></ul></li></ul></li></ul></li></ul><h3 id='redis的数据类型'><span>Redis的数据类型</span></h3><ul><li><p><span>String</span></p><ul><li><p><span>定义</span></p><ul><li><span>String类型是二进制安全的，意思是redis的string可以包含任何数据，比如jpg图片或者序列化的对象。</span></li><li><span>一个Redis中字符串value最多可以是512M</span></li></ul></li><li><p><span>数据结构</span></p><ul><li><p><span>简单动态字符串（Simple Dynamic String)</span></p><ul><li><span>一个带长度信息的字节数组(防止对字节数组进行遍历来获取长度，O(n))</span></li><li><span>内部结构实现上类似于Java的ArrayList，采用预分配冗余空间的方式来减少内存的频繁分配.</span></li><li><span>内部为当前字符串实际分配的空间capacity一般要高于实际字符串长度len。</span></li></ul></li><li><p><span>Length&lt;1M：2倍  Length&gt;1M：最多1M</span></p></li></ul></li><li><p><span>使用场景</span></p><ul><li><p><span>计数器</span></p></li><li><p><span>用户登录次数</span></p></li><li><p><span>对象缓存存储</span></p><ul><li><span>JSON 序列化对象信息</span></li></ul></li></ul></li><li><p><span>优点</span></p><ul><li><p><span>常数复杂度获取字符串长度</span></p></li><li><p><span>二进制安全</span></p><ul><li><span>通过 len属性的值来判断是否结束，而不是C字符串的 \0 作为结束</span></li></ul></li><li><p><span>减少修改字符串长度时所需的内存重分配次数</span></p><ul><li><span>如果新字符串小于1M，则新空间为扩展后字符串长度的两倍+1</span></li><li><span>如果新字符串大于1M，则新空间为扩展后字符串长度+1M+1。称为内存预分配</span></li></ul></li><li><p><span>API安全，杜绝缓冲区溢出</span></p><ul><li><span>SDS 在进行字符串拼接时，会先检查 len 的长度是否足够，如果不够，会先扩展 len，再进行字符串拼接</span></li><li><span>防止忘记扩展内存</span></li></ul></li></ul></li><li><p><span>注意事项</span></p><ul><li><span>1、基本编码方式是RAW，基于简单动态字符串（SDS）实现</span></li><li><span>2、如果存储的SDS长度小于44字节，则会采用EMBSTR编码，此时object head与SDS是一段连续空间（效率更高）</span></li><li><span>3、如果存储的字符串是整数值，并且大小在LONG_MAX范围内，则会采用INT编码：直接将数据保存在RedisObject的ptr指针位置（刚好8字节）</span></li></ul></li></ul></li><li><p><span>List</span></p><ul><li><p><span>定义</span></p><ul><li><span>它的底层实际是个双向链表，对两端的操作性能很高，通过索引下标的操作中间的节点性能会较差。</span></li><li><span>简单的字符串列表，按照插入顺序排序</span></li></ul></li><li><p><span>数据结构</span></p><ul><li><p><span>压缩列表</span></p><ul><li><p><span>定义</span></p><ul><li><span>一系列特殊编码的连续内存块组成的顺序型数据结构</span></li><li><span>每个节点中可以保存相应的数据类型（字节数组或者一个整数值）</span></li></ul></li><li><p><span>构成</span></p><ul><li><p><span>previous_entry_length</span></p><ul><li><span>记录了压缩列表中的前一个字节的长度</span></li></ul></li><li><p><span>encoding</span></p><ul><li><span>记录了节点的 content 属性所保存数据的类型以及长度</span></li></ul></li><li><p><span>content</span></p><ul><li><span>负责保存节点的值</span></li></ul></li></ul></li><li><p><span>连锁更新问题</span></p><ul><li><p><span>原因</span></p><ul><li><p><span>Entry的previous_entry_length</span></p><ul><li><span>如果前一节点的长度小于254字节，则采用1个字节来保存这个长度值</span></li><li><span>如果前一节点的长度大于等于254字节，则采用5个字节来保存这个长度值，第一个字节为0xfe</span></li></ul></li></ul></li><li><p><span>过程</span></p><ul><li><span>假设有 N 个连续的，长度为 250-253 之间的 entry ,此时 previous_entry_length 属性用一个字节即可记录</span></li><li><span>当有一个大小为 254 个字节的 entry 插入ZipList 最前面，此时会导致后面 entry 的 previous_entry_length 用 5 个字节来存储当前插入节点的大小</span></li><li><span>会导致后一个 entry 的大小变得大于或等于 254 个字节，从而引发连锁反应</span></li></ul></li><li><p><span>新增+删除</span></p></li></ul></li><li><p><span>优点</span></p><ul><li><span>内存占用低</span></li></ul></li><li><p><span>缺点</span></p><ul><li><span>申请内存必须是连续空间，如果内存占用较多，申请内存效率很低</span></li><li><span>如果列表数据过多，导致链表过长，可能影响查询性能</span></li><li><span>增或删较大数据时有可能发生连续更新问题</span></li></ul></li></ul></li><li><p><span>快速链表(quickList)</span></p><ul><li><p><span>链表和ziplist结合,将多个ziplist使用双向指针串起来使用</span></p></li><li><p><span>优点</span></p><ul><li><span>控制了ZipList大小，解决连续内存空间申请效率问题</span></li><li><span>中间节点可以压缩，进一步节省了内存</span></li></ul></li><li><p><span>缺点</span></p></li></ul></li><li><p><span>列表元素较少时使用zipList，数据量多时才会变成quickList</span></p></li></ul></li><li><p><span>使用场景</span></p><ul><li><p><span>消息排行</span></p></li><li><p><span>消息队列</span></p><ul><li><span>利用List的PUSH操作，将任务存在List中，然后工作线程再用POP操作将任务取出进行执行</span></li></ul></li><li><p><span>栈、队列</span></p></li><li><p><span>分页功能</span></p></li></ul></li></ul></li><li><p><span>Set</span></p><ul><li><p><span>定义</span></p><ul><li><span>string类型的无序集合。它底层其实是一个value为null的hash表，添加，删除，查找的复杂度都是O(1)，所有的value都指向同一个内部值.</span></li><li><span>可以自动排重的</span></li></ul></li><li><p><span>数据结构</span></p><ul><li><span>为了查询效率和唯一性，set采用HT编码（Dict）。Dict中的key用来存储元素，value统一为null</span></li><li><span>当存储的所有数据都是整数，并且元素数量不超过set-max-intset-entries（512）时，Set会采用IntSet编码，以节省内存</span></li></ul></li><li><p><span>使用场景</span></p><ul><li><p><span>共同关注</span></p><ul><li><span>两个set集合做交集，存放关注的用户的id</span></li></ul></li><li><p><span>共同爱好</span></p></li><li><p><span>推荐好友</span></p></li><li><p><span>二度好友</span></p></li></ul></li></ul></li><li><p><span>Hash</span></p><ul><li><p><span>定义</span></p><ul><li><span>一个string类型的field和value的映射表</span></li></ul></li><li><p><span>数据结构</span></p><ul><li><p><span>ziplist（压缩列表）</span></p><ul><li><span>ZipList中相邻的两个entry 分别保存field和value</span></li></ul></li><li><p><span>hashtable（哈希表）</span></p></li><li><p><span>当field-value长度较短且个数较少时，使用ziplist，否则使用hashtable</span></p></li></ul></li><li><p><span>注意事项</span></p><ul><li><p><span>1、当数据量较大时，Hash结构会转为HT编码，也就是Dict</span></p><ul><li><span>ZipList中的元素数量超过了hash-max-ziplist-entries（默认512）</span></li><li><span>ZipList中的任意entry大小超过了hash-max-ziplist-value（默认64字节）</span></li></ul></li></ul></li><li><p><span>使用场景</span></p><ul><li><span>对象存储</span></li></ul></li></ul></li><li><p>&nbsp;</p></li><li><p><span>Zset</span></p><ul><li><p><span>定义</span></p><ul><li><span>使用了两个数据结构；一个是hash，用于关联元素的value和score，保障元素value的唯一性，可以通过元素value找到相应的score值；另一个是跳跃表，用于给value排序，根据score的范围获取元素列表。</span></li><li><span>个成员都关联了一个评分（score）,这个评分（score）被用来按照从最低分到最高分的方式排序集合中的成员</span></li></ul></li><li><p><span>数据结构</span></p><ul><li><p><span>hash</span></p><ul><li><span>关联元素value和权重score，保障元素value的唯一性，可以通过元素value找到相应的score值。</span></li></ul></li><li><p><span>跳跃表(skiplist)</span></p><ul><li><span>跳跃表是将链表改造支持二分法查找的数据结构</span></li><li><span>每两个元素抽取一个元素放到上一层，这样依次叠加，就形成了多层的链表。上一层的元素个数是下一层元素个数的1/2，所以查询的时候就类似二分查找。</span></li><li><span>如果这个节点的指向为NULL或指向的值大于要查找的值，往下一层。</span></li></ul></li></ul></li><li><p><span>注意事项</span></p><ul><li><p><span>zset还会采用ZipList结构来节省内存</span></p><ul><li><span>元素数量小于zset_max_ziplist_entries，默认值128</span></li><li><span>每个元素都小于zset_max_ziplist_value字节，默认值64</span></li></ul></li></ul></li><li><p><span>使用场景</span></p><ul><li><p><span>排行榜实现</span></p><ul><li><span>例如点赞排行以系统当前时间为score排序，微信运动排行排行以步数排序</span></li></ul></li><li><p><span>取Top N测试</span></p></li></ul></li></ul></li><li><p><span>Bitmaps</span></p><ul><li><p><span>定义</span></p><ul><li><span>实际上它就是字符串（key-value） ， 但是它可以对字符串的位进行操作</span></li><li><span>Bitmaps想象成一个以位为单位的数组， 数组的每个单元只能存储0和1， 数组的下标在Bitmaps中叫做偏移量</span></li></ul></li><li><p><span>使用场景</span></p><ul><li><p><span>统计用户信息状态，活跃</span></p></li><li><p><span>打卡情况</span></p></li><li><p><span>登录状态</span></p></li><li><p><span>用户签到</span></p><ul><li><span>stringRedisTemplate.opsForValue().setBit(key, dayOfMonth - 1, true)</span></li></ul></li><li><p><span>签到统计</span></p><ul><li><span>stringRedisTemplate.opsForValue().bitField(key,</span>
+<span>BitFieldSubCommands.create().get(BitFieldSubCommands.BitFieldType.unsigned(LocalDateTime.now().getDayOfMonth())).valueAt(0)</span></li></ul></li></ul></li><li><p><span>setbit、getbit</span></p></li></ul></li><li><p><span>Hyperloglog</span></p><ul><li><p><span>定义</span></p><ul><li><span>基数统计的算法</span></li><li><span>在输入元素的数量或者体积非常非常大时，计算基数所需的空间总是固定 的、并且是很小的。</span></li></ul></li><li><p><span>使用场景</span></p><ul><li><p><span>解决求集合中不重复元素个数的问题称为基数问题</span></p></li><li><p><span>统计网页的UV（浏览用户数量，一天内同一个用户多次访问只能算一次）</span></p><ul><li><span>每次用户访问就把用户id放入Hyperloglog中</span></li></ul></li></ul></li></ul></li><li><p><span>Geospatial</span></p><ul><li><span>地理信息的缩写。该类型，就是元素的2维坐标，在地图上就是经纬度</span></li><li><span>geo的数据类型为zset</span></li><li><span>将用户给定的地理位置信息储存起来，来实现诸如附近位置、摇一摇这类依赖于地理位置信息的功能。</span></li></ul></li><li><p><span>子主题 9</span></p><ul><li></li></ul></li></ul><h3 id='reids的同步机制'><span>Reids的同步机制</span></h3><ul><li><span>Redis 支持主从同步、从从同步。如果是第一次进行主从同步，主节点需要使用 bgsave 命令，再将后续修改操作记录到内存的缓冲区，等 RDB 文件全部同步到复制节点，复制节点接受完成后将RDB 镜像记载到内存中。</span></li><li><span>等加载完成后，复制节点通知主节点将复制期间修改的操作记录同步到复制节点，即可完成同步过程。</span></li></ul><h3 id='redis的主从复制'><span>Redis的主从复制</span></h3><ul><li><p><span>定义</span></p><ul><li><span>主机数据更新后根据配置和策略， 自动同步到备机的master/slaver机制，Master以写为主，Slave以读为主</span></li><li><span>读写分离，性能扩展；容灾快速恢复</span></li></ul></li><li><p><span>分类</span></p><ul><li><p><span>一主二从</span></p></li><li><p><span>薪火相传</span></p><ul><li><span>上一个Slave可以是下一个slave的Master，Slave同样可以接收其他 slaves的连接和同步请求</span></li></ul></li><li><p><span>反客为主</span></p><ul><li><span>当一个master宕机后，后面的slave可以立刻升为master，其后面的slave不用做任何修改</span></li><li><span>slaveof  no one ：将从机变为主机</span></li></ul></li></ul></li><li><p><span>实现原理</span></p><ul><li><p><span>同步关键</span></p><ul><li><p><span>Replication Id</span></p><ul><li><span>简称replid，是数据集的标记，id一致则说明是同一数据集。每一个master都有唯一的replid，slave则会继承master节点的replid</span></li></ul></li><li><p><span>offset</span></p><ul><li><span>偏移量，随着记录在repl_baklog中的数据增多而逐渐增大.slave完成同步时也会记录当前同步的offset。如果slave的offset小于master的offset，说明slave数据落后于master，需要更新.</span></li></ul></li></ul></li><li><p><span>流程</span></p><ul><li><p><span>1、Slave启动成功连接到master后会发送一个sync命令(数据同步消息)，携带replid和offset</span></p></li><li><p><span>2、Master接到命令(同步消息)启动后台的存盘进程，对。</span></p><ul><li><p><span>第一次同步（replid不一致）</span></p><ul><li><span>进行全量复制，返回版本信息(replid、offset)</span></li></ul></li><li><p><span>不是第一次同步</span></p><ul><li><span>增量复制</span></li></ul></li></ul></li><li><p><span>4、每次主服务器进行写操作后，都会和从服务器进行数据同步</span></p></li><li><p><span>3、Master生成rdb期间记录所有的命令，存放到repl_baklog文件中，并不断向Slave发送文件中的命令</span></p></li></ul></li></ul></li><li><p><span>复制类型</span></p><ul><li><p><span>全量复制</span></p><ul><li><p><span>流程</span></p><ul><li><span>Master执行bgsave命令进行持久化，生成rdb文件，master将传送整个数据文件到slave，Slave清空本地数据并加载rdb文件</span></li></ul></li><li><p><span>时机</span></p><ul><li><span>1、slave节点第一次连接master节点时</span></li><li><span>2、slave节点断开时间太久，repl_baklog中的offset已经被覆盖时（未备份数据被覆盖）</span></li></ul></li></ul></li><li><p><span>增量复制</span></p><ul><li><p><span>流程</span></p><ul><li><span>Master继续将repl_log中新的所有收集到的修改命令依次传给slave,完成同步</span></li></ul></li><li><p><span>时机</span></p><ul><li><span>slave节点断开又恢复，并且在repl_baklog中能找到offset时</span></li></ul></li></ul></li></ul></li><li><p><span>slaveof </span><masterip><span> </span><masterport></p></li></ul><h3 id='redis的哨兵模式'><span>Redis的哨兵模式</span></h3><ul><li><p><span>定义</span></p><ul><li><span>实现主从集群的自动故障恢复的一种机制，能够后台监控主机是否故障，如果故障了根据投票数自动将从库转换为主库</span></li></ul></li><li><p><span>作用</span></p><ul><li><p><span>监控</span></p><ul><li><span>Sentinel 会不断检查master和slave是否按预期工作</span></li></ul></li><li><p><span>自动故障恢复</span></p><ul><li><span>如果master故障，Sentinel会将一个slave提升为master。当故障实例恢复后也以新的master为主</span></li></ul></li><li><p><span>通知</span></p><ul><li><span>Sentinel充当Redis客户端的服务发现来源，当集群发生故障转移时，会将最新信息推送给Redis的客户端</span></li></ul></li></ul></li><li><p><span>服务状态监控</span></p><ul><li><p><span>定义</span></p><ul><li><span>Sentinel基于心跳机制监测服务状态，每隔1秒向集群的每个实例发送ping命令</span></li></ul></li><li><p><span>状态</span></p><ul><li><p><span>主观下线</span></p><ul><li><span>如果某sentinel节点发现某实例未在规定时间（down-after-milliseconds * 10）响应，则认为该实例主观下线。</span></li><li><span>正在监视这个Master的所有 Sentinel 要以每秒一次的频率确认Master的确进入了主观下线状态</span></li></ul></li><li><p><span>客观下线</span></p><ul><li><span>若指定时间内超过指定数量（quorum）的sentinel都认为该实例主观下线，则该实例客观下线。quorum值最好超过Sentinel实例数量的一半。</span></li></ul></li></ul></li></ul></li><li><p><span>选举策略</span></p><ul><li><p><span>一定不选举主观下线的节点</span></p></li><li><p><span>优先选择优先级高的</span></p><ul><li><span>在redis.conf中默认：slave-priority 100，值越小优先级越高（为0不参与选举）</span></li></ul></li><li><p><span>其次选择偏移量最大的</span></p><ul><li><p><span>偏移量</span></p><ul><li><span>获得原主机数据是否全面</span></li></ul></li><li><p><span>从机的数据越全面，优先选择</span></p></li></ul></li><li><p><span>最后选择runid最小的</span></p><ul><li><p><span>runid</span></p><ul><li><span>每个redis实例启动后都会随机生成一个40位的runid，越小优先级越高</span></li></ul></li></ul></li></ul></li><li><p><span>故障转移流程</span></p><ul><li><span>1、sentinel给备选的slave1节点发送slaveof no one命令，让该节点成为master</span></li><li><span>2、sentinel给所有其它slave发送slaveof 192.168.150.101 7002 命令，让这些slave成为新master的从节点，开始从新的master上同步数据</span></li><li><span>3、最后，sentinel将故障节点标记为slave（配置文件层修改），当故障节点恢复后会自动成为新的master的slave节点</span></li></ul></li><li><p><span>恢复过程</span></p><ul><li><span>1、根据选举策略选举新的主服务</span></li><li><span>2、哨兵(sentinel)向原主服务的从服务发送salveof的新主服务的命令，复制新的master</span></li><li><span>3、已下线的主服务上线时自动成为从机</span></li></ul></li><li><p><span>实现</span></p><ul><li><p><span>新建sentinel.conf文件</span></p><ul><li><span>port 27001</span>
+<span>sentinel announce-ip 120.78.230.51</span>
+<span>sentinel monitor mymaster 120.78.230.51 7001 quorum</span>
+<span>sentinel down-after-milliseconds mymaster 5000</span>
+<span>sentinel failover-timeout mymaster 60000</span>
+<span>dir &quot;/opt/redis/sentinel-7001&quot;</span></li></ul></li><li><p><span>quorum &gt; sentinels/2+1</span></p></li><li><p><span>mymaster为监控对象起的服务器名称， 1 为至少有多少个哨兵同意迁移的数量。</span></p></li><li><p><span>执行redis-sentinel  /myredis/sentinel.conf</span></p></li></ul></li></ul><h3 id='redis的分片集群'><span>Redis的分片集群</span></h3><ul><li><p><span>定义</span></p><ul><li><span>实现了对Redis的水平扩容，即启动N个redis节点，将整个数据库分布存储在这N个节点中，每个节点存储总数据的1/N。</span></li></ul></li><li><p><span>为什么要使用集群？</span></p><ul><li><span>主从模式，薪火相传模式，主机宕机，导致ip地址发生变化，应用程序中配置需要修改对应的主机地址、端口等信息</span></li><li><span>进行redis扩容</span></li><li><span>存在大量并发写操作时，采用主从模式依然有很大的压力</span></li><li><span>无中心化配置，使得ip地址可以自动重定向</span></li></ul></li><li><p><span>集群配置</span></p><ul><li><p><span>修改配置文件</span></p><ul><li><span>cluster-enabled yes    打开集群模式</span></li><li><span>cluster-config-file nodes-6379.conf  设定节点配置文件名</span></li><li><span>cluster-node-timeout 15000   设定节点失联时间，超过该时间（毫秒），集群自动进行主从切换</span></li></ul></li><li><p><span>redis-cli --cluster create --cluster-replicas 1 120.78.230.51:7001 120.78.230.51:7002 120.78.230.51:7003 120.78.230.51:8001 120.78.230.51:8002 120.78.230.51:8003</span></p><ul><li><span>--replicas 1 采用最简单的方式配置集群，一台主机，一台从机，正好三组</span></li></ul></li><li><p><span>redis-cli -c -p 6379</span></p><ul><li><span>-c 采用集群策略连接，设置数据会自动切换到相应的写主机</span></li><li><span>尽量用-c登录，不然可能直接进入读主机，存储数据时，会出现MOVED重定向操作</span></li><li><span>–c 参数实现自动重定向到对应的主机进行操作</span></li></ul></li></ul></li><li><p><span>插槽(slots)</span></p><ul><li><p><span>定义</span></p><ul><li><span>一个 Redis 集群包含 16384 (2^14)个插槽（hash slot）， 数据库中的每个键都属于这 16384 个插槽的其中一个</span></li><li><span>集群使用公式 CRC16(key) % 16384 来计算键 key 属于哪个槽， 其中 CRC16(key) 语句用于计算键 key 的 CRC16 校验和</span></li></ul></li><li><p><span>计算插槽</span></p><ul><li><span>CRC16(key) % 16384 </span></li><li><span>key中包含&quot;{}&quot;，且“{}”中至少包含1个字符，“{}”中的部分是有效部分</span></li><li><span>key中不包含“{}”，整个key都是有效部分</span></li></ul></li><li><p><span>注意事项</span></p><ul><li><span>1、不在一个slot下的键值，是不能使用mget,mset等多键操作</span></li><li><span>2、每次录入、查询键值，redis都会计算出该key应该送往的插槽</span></li><li><span>3、只能在操作本机的插槽</span></li><li><span>4、可以通过{}来定义组的概念，从而使key中{}内相同内容的键值对放到一个slot中去</span></li></ul></li></ul></li><li><p><span>故障恢复</span></p><ul><li><p><span>如果主节点下线？从节点能否自动升为主节点？注意：15秒超时</span></p><ul><li><span>主节点恢复后，主从关系会如何？主节点回来变成从机</span></li></ul></li><li><p><span>流程</span></p><ul><li><span>1、首先是该实例与其它实例失去连接</span></li><li><span>2、然后是疑似宕机</span></li><li><span>3、最后是确定下线，自动提升一个slave为新的master</span></li></ul></li><li><p><span>cluster-require-full-coverage</span></p><ul><li><p><span>yes </span></p><ul><li><span>如果某一段插槽的主从都挂掉，整个集群都挂掉</span></li></ul></li><li><p><span>no</span></p><ul><li><span>如果某一段插槽的主从都挂掉，该插槽数据全都不能使用，也无法存储</span></li></ul></li></ul></li></ul></li><li><p><span>数据迁移</span></p><ul><li><p><span>定义</span></p><ul><li><span>salve接管master，进行master与slave之间的数据迁移</span></li><li><span>cluster failover</span></li></ul></li><li><p><span>流程</span></p><ul><li><span>1、slave节点告诉master节点拒绝任何客户端请求</span></li><li><span>2、 master返回当前的数据offset给slave</span></li><li><span>3、3.等待数据offset与master一致</span></li><li><span>4、开始故障转移，标记自己为master，广播故障转移的结果</span></li></ul></li></ul></li><li><p><span>其它命令</span></p><ul><li><span>redis-cli -p 7001 cluster nodes：查看集群信息</span></li><li><span>cluster getkeysinslot </span><slot><count><span>：返回 count 个 slot 槽中的键</span></li><li><span>cluster countkeysinslot </span><slot><span>：查看插槽中键的数量</span></li><li><span>cluster failover：进行master与slave之间的数据迁移，slave接管master</span></li></ul></li><li><p><span>缺点</span></p><ul><li><span>（1）多键操作是不被支持的 </span>
+<span>（2）多键的Redis事务是不被支持的。lua脚本不被支持</span>
+<span>（3）由于集群方案出现较晚，很多公司已经采用了其他的集群方案，而代理或者客户端分片的方案想要迁移至redis cluster，需要整体迁移而不是逐步过渡，复杂度较大</span></li></ul></li></ul><h3 id='redis的线程模型'><span>Redis的线程模型</span></h3><ul><li><p><span>为什么redis是单线程的？</span></p><ul><li><span>（1）redis内部使用文件事件处理器(file event handler)，这个文件事件处理器是单线程的。</span></li><li><span>（2）文件事件处理器采用IO多路复用机制同时监听多个socket，根据socket上的事件选择对应的事件处理器进行处理。</span></li><li><span>（3）多线程处理会涉及到锁，并且多线程处理会涉及到线程切换而消耗 CPU。采用单线程，避免了不必要的上下文切换和竞争条件。其次 CPU 不是 Redis 的瓶颈，Redis 的瓶颈最有可能是机器内存或者网络带宽。</span></li></ul></li><li><p><span>文件事件处理器</span></p><ul><li><p><span>多个socket</span></p></li><li><p><span>IO多路复用程序</span></p></li><li><p><span>文件事件分派器</span></p><ul><li><span>文件事件分派器会优先处理 AE_READABLE事件，等到AE_READABLE事件处理完之后，才处理AE_WRITABLE事件</span></li></ul></li><li><p><span>事件处理器</span></p><ul><li><span>连接应答处理器</span></li><li><span>命令请求处理器</span></li><li><span>命令回复处理器</span></li></ul></li></ul></li><li><p><span>redis与客户端的一次通信过程</span></p><ul><li><span>1.客户端Socket01向Redis的Server Scoket请求建立连接，此时Server Socket产生一个AE_READABLE事件，IO多路复用程序监听到Server socket产生的事件后，将该事件压入队列。文件事件分派器从队列中获取该事件，交给连接应答处理器。连接应答处理器创建能与客户端通信的Socket01，并将该Socket01的AE_READABLE事件与命令请求处理器关联。</span></li><li><span>2.假设此时客户端发送一个set key value请求，此时Redis的Socket01会产生AE_READABLE事件，IO多路复用程序将事件压入队列，事件分派器从中获取该事件，交给命令请求处理器(redis的Socket01的AE_READABLE已经与命令请求器关联)，命令请求处理器读取这个请求并在自己的内存中完成set key value的设置。操作完成后，将Socket01的AE_WRITABLE事件与命令回复处理器关联。</span></li><li><span>3.如果此时客户端准备好接受返回结果了，Redis中的Socket01会产生一个AE_WRITABLE事件，将其压入队列中，事件分派器找到相关联的命令回复器，命令回复器对Socket01输入本次操作的一个结果(ok)，之后解除Socket01的AE_WRITABLE事件与命令回复器的关联。</span></li></ul></li><li><p><span>文件事件</span></p><ul><li><span>AE_READABLE/AE_WRITABLE</span></li><li><span>服务器则通过监听并处理这些事件来完成一系列网络通信 操作</span></li></ul></li><li><p><span>AE_READABLE/AE_WRITABLE的产生</span></p><ul><li><span>如果套接字的读事件正在被监听，那么函数返回AE_READABLE</span></li><li><span>如果套接字的写事件正在被监听，那么函数返回AE_WRITABLE</span></li><li><span>当套接字变得可读时（客户端对套接字执行write操作，或者执行close操作），或者有新的可应答（acceptable）套接字出现时（客户端对服务器的监听套接字执行connect操 作），套接字产生AE_READABLE事件。</span></li><li><span>套接字变得可写时（客户端对套接字执行read操作），套接字产生AE_WRITABLE事 件</span></li></ul></li><li><p><span>IO多路复用程序</span></p><ul><li><p><span>定义</span></p><ul><li><span>IO多路复用：是利用单个线程来同时监听多个FD，并在某个FD可读、可写时得到通知，从而避免无效的等待，充分利用CPU资源。</span></li></ul></li><li><p><span>实现</span></p><ul><li><span>Redis的I/O多路复用程序的所有功能都是通过包装常见的select、epoll、evport和kqueue 这些I/O多路复用函数库来实现的</span></li></ul></li></ul></li><li><p><span>文件描述符（File Descriptor）</span></p><ul><li><span>简称FD，是一个从0 开始的无符号整数，用来关联Linux中的一个文件。在Linux中，一切皆文件，例如常规文件、视频、硬件设备等，当然也包括网络套接字（Socket）</span></li></ul></li><li><p><span>事件通知机制</span></p><ul><li><p><span>分类</span></p><ul><li><span>LevelTriggered：简称LT，也叫做水平触发。只要某个FD中有数据可读，每次调用epoll_wait都会得到通知。</span></li><li><span>EdgeTriggered：简称ET，也叫做边沿触发。只有在某个FD有状态变化时，调用epoll_wait才会被通知。</span></li></ul></li></ul></li></ul><h3 id='redis的持久化机制'><span>Redis的持久化机制</span></h3><ul><li><p><span>定义</span></p><ul><li><span>将数据从内存同步到磁盘中</span></li><li><span>单独创建fork()一个子进程，将当前父进程的数据库数据复制到子进程的内存中，然后由子进程写入到临时文件中，持久化的过程结束了，再用这个临时文件替换上次的快照文件，然后子进程出，内存释放。</span></li></ul></li><li><p><span>分类</span></p><ul><li><p><span>RDB</span></p><ul><li><p><span>定义</span></p><ul><li><span>按照一定的时间周期策略把内存的数据以快照的形式保存到硬盘的二进制文件，持久化结束后，用这个临时文件替换上次持久化的文件，达到数据恢复。</span></li></ul></li><li><p><span>过程</span></p><ul><li><span>单独创建fork()一个子进程，将当前父进程的数据库数据复制到子进程的内存中，然后由子进程写入到临时文件中，持久化的过程结束了，再用这个临时文件替换上次的快照文件，然后子进程出，内存释放。（写时复制技术 bgsave）</span></li></ul></li><li><p><span>优缺点</span></p><ul><li><p><span>优点</span></p><ul><li><span>（1）只有一个文件 dump.rdb ，方便持久化。</span>
+<span>（2）容灾性好，一个文件可以保存到安全的磁盘。</span>
+<span>（3）性能最大化，fork 子进程来完成写操作，让主进程继续处理命令，所以是 IO 最大化。使用单独子进程来进行持久化，主进程不会进行任何 IO 操作，保证了 Redis 的高性能</span>
+<span>（4）相对于数据集大时，比 AOF 的启动效率更高。</span></li></ul></li><li><p><span>缺点</span></p><ul><li><span>数据安全性低。 RDB 是间隔一段时间进行持久化，如果持久化之间 Redis 发生故障，会发生数据丢失</span></li><li><span>内存中的数据被复制了一遍，内存需要足够大</span></li></ul></li></ul></li><li><p><span>动态停止RDB</span></p><ul><li><span>redis-cli config set save &quot;&quot; #save后给空值，表示禁用保存策略</span></li></ul></li><li><p><span>写时复制(copy-on-write)</span></p><ul><li><span>当主进程写操作时，首先会复制一份将要涉及写操作的内存页。然后主进程在新复制的内存页上进行写操作，原有内存页继续供子进程持久化</span></li></ul></li></ul></li><li><p><span>AOF</span></p><ul><li><p><span>定义</span></p><ul><li><span>指所有的命令行记录以 Redis 命令请求协议的格式完全持久化存储，保存为 AOF 文件</span></li><li><span>每条会使 Redis 内存数据发生改变的命令都通过Write函数追加到文件最后，Redis每次重启都会读取AOF文件进重构数据</span></li></ul></li><li><p><span>过程</span></p><ul><li><span>1、客户端的请求写命令会被append追加到AOF缓冲区内；</span></li><li><span>2、AOF缓冲区根据AOF持久化策略[always,everysec,no]将操作sync同步到磁盘的AOF文件中</span></li><li><span>3、AOF文件大小超过重写策略或手动重写时，会对AOF文件rewrite重写，压缩AOF文件容量</span></li><li><span>4、Redis服务重启时，会重新load加载AOF文件中的写操作达到数据恢复的目的</span></li></ul></li><li><p><span>优缺点</span></p><ul><li><p><span>优点</span></p><ul><li><span>（1）数据安全， AOF 持久化可以配置 appendfsync 属性，有 always，每进行一次命令操作就记录到 AOF 文件中一次。</span>
+<span>（2）通过 append 模式写文件，即使中途服务器宕机，可以通过 redis-check-aof 工具解决数据一致性问题。</span>
+<span>（3）AOF 机制的 rewrite 模式。 AOF 文件没被 rewrite 之前（文件过大时会对命令进行合并重写），可以删除其中的某些命令（比如误操作的 flushall )</span></li></ul></li><li><p><span>缺点</span></p><ul><li><span>（1）AOF 文件比 RDB 文件大，且恢复速度慢。</span>
+<span>（2）数据集大的时候，比 RDB 启动效率低。</span></li></ul></li></ul></li><li><p><span>持久化策略(同步频率)</span></p><ul><li><p><span>appendfsync always</span></p><ul><li><span>始终同步，每次Redis的写入都会立刻记入日志；性能较差但数据完整性比较好</span></li></ul></li><li><p><span>appendfsync everysec</span></p><ul><li><span>每秒同步，每秒记入日志一次，如果宕机，本秒的数据可能丢失</span></li></ul></li><li><p><span>appendfsync no</span></p><ul><li><span>redis不主动进行同步，把同步时机交给操作系统</span></li></ul></li></ul></li><li><p><span>重写(rewrite)</span></p><ul><li><p><span>目的</span></p><ul><li><span>压缩AOF文件容量</span></li></ul></li><li><p><span>条件</span></p><ul><li><p><span>超过重写策略</span></p><ul><li><span>auto-aof-rewrite-percentage 100 # AOF文件比上次文件 增长超过多少百分比则触发重写</span>
+<span>auto-aof-rewrite-min-size 64mb # AOF文件体积最小多大以上才触发重写 </span></li></ul></li><li><p><span>手动重写</span></p><ul><li><span>bgwriteaof</span></li></ul></li></ul></li><li><p><span>过程</span></p><ul><li><span>1、bgrewriteaof触发重写，判断是否当前有bgsave(写命令)或bgrewriteaof(重写)在运行，如果有，则等待该命令结束后再继续执行。</span></li><li><span>2、主进程fork出子进程执行重写操作，保证主进程不会阻塞。</span></li><li><span>3、子进程遍历redis内存中数据到临时文件，客户端的写请求同时写入aof_buf缓冲区和aof_rewrite_buf重写缓冲区保证原AOF文件完整以及新AOF文件生成期间的新的数据修改动作不会丢失。</span></li><li><span>4、1)子进程写完新的AOF文件后，向主进程发信号，父进程更新统计信息。2).主进程把aof_rewrite_buf中的数据写入(追加)到新的AOF文件。</span></li><li><span>5、使用新的AOF文件覆盖旧的AOF文件，完成AOF重写。</span></li></ul></li></ul></li></ul></li></ul></li><li><p><span>如何选择</span></p><ul><li><span>1、不要仅仅使用 RDB ，因为那样会导致你丢失很多数据。</span></li><li><span>2、 也不要仅仅使用 AOF ，因为那样有两个问题，第一，你通过 AOF 做冷备没有 RDB 做冷备的恢复速度更快; 第二， RDB 每次简单粗暴生成数据快照，更加健壮，可以避免 AOF 这种复杂的备份和恢复机制的 bug。</span></li><li><span>3.、Redis 支持同时开启开启两种持久化方式，我们可以综合使用 AOF 和 RDB 两种持久化机制，用 AOF 来保证数据不丢失，作为数据恢复的第一选择; 用 RDB 来做不同程度的冷备，在 AOF文件都丢失或损坏不可用的时候，还可以使用 RDB 来进行快速的数据恢复。</span></li><li><span>4、如果同时使用 RDB 和 AOF 两种持久化机制，那么在 Redis 重启的时候，会使用 AOF 来重新构建数据，因为 AOF 中的数据更加完整。</span></li><li><span>5、同时开启会默认使用AOF</span></li></ul></li></ul><h3 id='redis的过期策略以及内存淘汰机制'><span>Redis的过期策略以及内存淘汰机制</span></h3><ul><li><p><span>过期策略</span></p><ul><li><p><span>定时删除</span></p><ul><li><span>用一个定时器来负责监视key,过期则自动删除。虽然内存及时释放，但是十分消耗CPU资源。在大并发请求下，CPU要将时间应用在处理请求，而不是删除key,因此没有采用这一策略。</span></li><li><span>会导致很多key到时间没有删除</span></li></ul></li><li><p><span>惰性删除</span></p><ul><li><span>获取某个key时，Redis会检查这个key是否设置了过期时间并进行相应处理（过期了才删除）。</span></li></ul></li><li><p><span>周期删除</span></p><ul><li><p><span>通过一个定时任务，周期性的抽样部分过期的key，然后执行删除</span></p></li><li><p><span>分类</span></p><ul><li><span>Redis服务初始化函数initServer()中设置定时任务，按照server.hz的频率来执行过期key清理，模式为SLOW</span></li><li><span>Redis的每个事件循环前会调用beforeSleep()函数，执行过期key清理，模式为FAST</span></li></ul></li></ul></li></ul></li><li><p><span>Redis采用定时删除+惰性删除策略</span></p><ul><li><span>（1）Redis每隔一段时间随机抽取一定数量的key进行检查，如果有过期的key就删除，并且采用惰性删除。获取某个key时，Redis会检查这个key是否设置了过期时间并进行相应处理。</span></li><li><span>（2）如果定期删除没删除key，并且没有即时去请求key，也就是说惰性删除也没生效，导致Redis的内存越来越高。</span></li></ul></li><li><p><span>缓存刷新（内存淘汰）策略</span></p><ul><li><p><span>分类</span></p><ul><li><span>volatile-lru：从已设置过期时间的数据集（server.db[i].expires）中挑选最近最少使用的数据淘汰</span></li><li><span>volatile-lfu： 对设置了TTL的key，基于LFU算法进行淘汰</span></li><li><span>volatile-ttl：从已设置过期时间的数集（server.db[i].expires）中挑选将要过期的数据淘汰</span></li><li><span>volatile-random：从已设置过期时间的数据集（server.db[i].expires）中任意选择数据淘汰</span></li><li><span>allkeys-lru：从数据集（server.db[i].dict）中挑选最近最少使用的数据淘汰</span></li><li><span>allkeys-lfu： 对全体key，基于LFU算法进行淘汰</span></li><li><span>allkeys-random：从数据集（server.db[i].dict）中任意选择数据淘汰</span></li><li><span>no-enviction（驱逐）：不淘汰任何key，但是内存满时不允许写入新数据（默认）</span></li></ul></li><li><p><span>算法</span></p><ul><li><p><span>LRU（Least Recently Used）</span></p><ul><li><span>最少最近使用。用当前时间减去最后一次访问时间，这个值越大则淘汰优先级越高</span></li></ul></li><li><p><span>LFU（Least Frequently Used）</span></p><ul><li><span>最少频率使用。会统计每个key的访问频率，值越小淘汰优先级越高</span></li></ul></li></ul></li></ul></li><li><p>&nbsp;</p></li></ul><h3 id='bigkey'><span>BigKey</span></h3><ul><li><p><span>定义</span></p><ul><li><span>指键值占用内存空间非常大的 key(&gt;10K)</span></li></ul></li><li><p><span>例子</span></p><ul><li><p><span>1、数据过大</span></p><ul><li><span>一个String类型的Key，它的值为5MB</span></li></ul></li><li><p><span>2、列表数量过多</span></p><ul><li><span>一个List类型的Key，它的列表数量为20000个</span></li></ul></li><li><p><span>3、成员数量过多</span></p><ul><li><span>一个ZSet类型的Key，它的成员数量为10000个</span></li></ul></li><li><p><span>4、成员体积过大</span></p><ul><li><span>一个Hash格式的Key，它的成员数量虽然只有1000个但这些成员的value总大小为100MB</span></li></ul></li></ul></li><li><p><span>发现</span></p><ul><li><p><span>1、redis-cli --bigkeys</span></p><ul><li><span>返回Key的整体统计信息与每个数据的Top1的big key</span></li></ul></li><li><p><span>2、scan扫描</span></p><ul><li><span>利用scan扫描Redis中的所有key，利用strlen、hlen等命令判断key的长度</span></li></ul></li><li><p><span>3、第三方工具</span></p><ul><li><span>如 Redis-Rdb-Tools 分析RDB快照文件，全面分析内存使用情况</span></li></ul></li><li><p><span>4、网络监控</span></p><ul><li><span>自定义工具，监控进出Redis的网络数据，超出预警值时主动告警</span></li></ul></li></ul></li><li><p><span>删除</span></p><ul><li><span>redis 3.0 及以下版本，如果是集合类型，则遍历BigKey的元素，先逐个删除子元素，最后删除BigKey</span></li><li><span>Redis在4.0后提供了异步删除的命令：unlink</span></li></ul></li><li><p><span>影响</span></p><ul><li><p><span>1、网络阻塞</span></p><ul><li><span>获取 bigkey 时，传输的数据量比较大，会增加带宽的压力</span></li></ul></li><li><p><span>2、超时阻塞</span></p><ul><li><span>因为 bigkey 占用的空间比较大，所以操作起来效率会比较低，导致出现阻塞的可能性增加</span></li></ul></li><li><p><span>3、导致内存空间不平衡(数据倾斜)</span></p><ul><li><span>BigKey所在的Redis实例内存使用率远超其他实例，无法使数据分片的内存资源达到均衡</span></li></ul></li><li><p><span>4、CPU压力</span></p><ul><li><span>对BigKey的数据序列化和反序列化会导致CPU的使用率飙升，影响Redis实例和本机其它应用</span></li></ul></li></ul></li></ul><h3 id='单点redis的问题及解决方案'><span>单点Redis的问题及解决方案</span></h3><ul><li><p><span>数据丢失问题</span></p><ul><li><span>实现Redis数据持久化</span></li></ul></li><li><p><span>并发能力问题</span></p><ul><li><span>搭建主从集群，实现读写分离</span></li></ul></li><li><p><span>故障恢复问题</span></p><ul><li><span>利用Redis哨兵，实现健康检测和自动恢复</span></li></ul></li><li><p><span>存储能力问题</span></p><ul><li><span>搭建分片集群，利用插槽机制实现动态扩容</span></li></ul></li></ul><h3 id='什么是-bigkey会存在什么影响'><span>什么是 bigkey？会存在什么影响？</span></h3><ul><li><p><span>定义</span></p><ul><li><span>指键值占用内存空间非常大的 key</span></li></ul></li></ul><h3 id='为什么要用redis'><span>为什么要用Redis？</span></h3><ul><li><p><span>高性能</span></p><ul><li><span>将数据进行缓存放入内存，直接操作缓存就是操作内存，速度快</span></li></ul></li><li><p><span>高并发</span></p><ul><li><span>支持多种数据结构，包括字符串、列表、集合、有序集合、哈希等</span></li></ul></li><li><p><span>直接操作缓存能够承受的请求是远远大于直接访问数据库的</span></p></li><li><p><span>支持事务，且操作遵守原子性，即对数据的操作要么都执行，要么都不支持</span></p></li><li><p><span>拥有其他丰富的功能，队列、主从复制、集群、数据持久化等功能</span></p></li></ul><h3 id='为什么redis这么快-1'><span>为什么Redis这么快？</span></h3><ul><li><p><span>C语言实现，效率高</span></p></li><li><p><span>纯内存数据库</span></p></li><li><p><span>单线程数据库</span></p><ul><li><span>不需要创建/销毁线程，避免上下文切换，无并发资源竞争的问题</span></li></ul></li><li><p><span>非阻塞式I/O复用模型(多路复用IO技术)</span></p><ul><li><span>“多路”指多个网络连接；&quot;复用&quot;指复用一个线程；多路复用IO技术可以让单线程高效的处理多个连接请求。</span></li></ul></li></ul><h3 id='为什么redis的key最大为512mb'><span>为什么Redis的key最大为512MB?</span></h3><ul><li><span>redis存在sdshdr64，但是为了防止bigkey，在底层对key的大小进行了限制，只能使用到sdshdr32（2^32/8/1024/1024=512m）</span></li></ul><h3 id='为什么redis这么快-2'><span>为什么Redis这么快？</span></h3><h3 id='为什么-redis-把所有数据放到内存中'><span>为什么 Redis 把所有数据放到内存中？</span></h3><ul><li><span>可以实现最快的对数据读取，如果数据存储在硬盘中，磁盘 I/O 会严重影响 Redis 的性能。而且 Redis 还提供了数据持久化功能，不用担心服务器重启对内存中数据的影响。其次现在硬件越来越便宜的情况下，Redis 的使用也被应用得越来越多，使得它拥有很大的优势</span></li></ul><h3 id='为什么要用-pipeline'><span>为什么要用 pipeline？</span></h3><ul><li><span>可以将多次 I/O 往返的时间缩短为一次，但是要求管道中执行的指令间没有因果关系</span></li><li><span>可以实现请求/响应服务器的功能，当客户端尚未读取旧响应时，它也可以处理新的请求。如果客户端存在多个命令发送到服务器时，那么客户端无需等待服务端的每次响应才能执行下个命令，只需最后一步从服务端读取回复即可</span></li></ul><h3 id='为什么redis的操作是原子性的怎么保证原子性的'><span>为什么Redis的操作是原子性的，怎么保证原子性的？</span></h3><ul><li><p><span>因为Redis是单线程的，事务是Redis执行的最小单位，事务是隔离的。对Redis来说，执行API就是一个任务。在单线程程序中，任务一个一个地做，必须做完一个任务后，才会去做另一个任务。 </span></p></li><li><p><span>Redis本身提供的所有API都是原子操作，Redis中的事务其实是要保证批量操作的原子性。</span></p></li><li><p><span>多个命令在并发中也是原子性的吗？</span></p><ul><li><span>不一定， 将get和set改成单命令操作(incr)，或者使用Redis的事务(Watch)，或者使用Redis+Lua的方式实现</span></li></ul></li></ul><h3 id='redis产生的问题及解决方案'><span>Redis产生的问题及解决方案？</span></h3><ul><li><p><span>分布式锁</span></p><ul><li><p><span>分类</span></p><ul><li><p><span>线程锁</span></p><ul><li><span>主要用来给方法、代码块加锁，只在同一个JVM中有效</span></li><li><span>线程锁的实现在根本上是依靠线程之间共享内存实现的</span></li></ul></li><li><p><span>进程锁</span></p><ul><li><span>为了控制同一操作系统中多个进程访问某个共享资源，因为进程具有独立性，各个进程无法访问其他进程的资源，因此无法通过synchronized等线程锁实现进程锁</span></li></ul></li><li><p><span>分布式锁</span></p><ul><li><span>当多个进程不在同一个系统中，用分布式锁控制多个进程对资源的访问</span></li></ul></li></ul></li><li><p><span>Redis实现分布式锁</span></p><ul><li><span>set key value [EX seconds|PX milliseconds|EXAT timestamp|PXAT milliseconds-timestamp |KEEPTTL] [NX|XX] [GET]</span></li><li><span>setnx加锁，设置时间自动释放锁</span></li></ul></li><li><p><span>分布式锁可用的条件</span></p><ul><li><span>1、互斥性。在任意时刻，只有一个客户端能持有锁</span></li><li><span>2、不会发生死锁。即使有一个客户端在持有锁的期间崩溃而没有主动解锁，也能保证后续其他客户端能加锁</span></li><li><span>3、加锁和解锁必须是同一个客户端，客户端自己不能把别人加的锁给解了</span></li><li><span>4、加锁和解锁必须具有原子性</span></li></ul></li><li><p><span>优化</span></p><ul><li><p><span>setnx设置锁的过期时间</span></p><ul><li><p><span>自动释放锁</span></p></li><li><p><span>问题</span></p><ul><li><span>可能会删除其它锁</span></li><li><span>子主题 2</span></li></ul></li></ul></li><li><p><span>设置uuid防止误删</span></p><ul><li><p><span>setnx获取锁时，设置一个指定的唯一值（例如：uuid）；释放前获取这个值，判断是否自己的锁的uuid与锁的uuid是否相同</span></p></li><li><p><span>问题</span></p><ul><li><span>删除没有原子性；</span></li><li><span>比较uuid相等后，正要删除锁的时候，锁的过期时间到了，自动释放锁，其它线程能够得到这个锁并上锁，但是上一个线程的删除操作还在进行，可能会删除这个线程的锁。</span></li></ul></li></ul></li><li><p><span>LUA脚本保证删除的原子性</span></p><ul><li><span>保证从判断锁到删除锁都是原子性的</span></li></ul></li></ul></li></ul></li><li><p><span>缓存雪崩</span></p><ul><li><p><span>定义</span></p><ul><li><span>由于原有缓存失效，新缓存未到期间，我们设置缓存时采用了相同的过期时间，在同一时刻出现大面积的缓存过期，所有原本应该访问缓存的请求都去查询数据库了，而对数据库CPU和内存造成巨大压力，严重的会造成数据库宕机。</span></li></ul></li><li><p><span>解决方案</span></p><ul><li><p><span>1、分散缓存失效时间，随机</span></p></li><li><p><span>2、采用加锁或队列的方式防止大量的线程对数据库一次性进行读写</span></p></li><li><p><span>3、构建多级缓存架构：nginx缓存 + redis缓存 +其他缓存（ehcache等)</span></p></li><li><p><span>4、设置过期标志更新缓存</span></p><ul><li><span>记录缓存数据是否过期（设置提前量），如果过期会触发通知另外的线程在后台去更新实际key的缓存。</span></li></ul></li></ul></li></ul></li><li><p><span>缓存穿透</span></p><ul><li><p><span>定义</span></p><ul><li><span>用户查询数据，在数据库没有，自然在缓存中也不会有。这样就导致用户查询的时候，在缓存中找不到，每次都要去数据库再查询一遍，然后返回空（相当于进行了两次无用的查询）。这样请求就绕过缓存直接查数据库，导致数据库压力过大，这也是经常提的缓存命中率问题。</span></li></ul></li><li><p><span>解决方案</span></p><ul><li><p><span>1、缓存空对象</span></p><ul><li><span>如果一个查询返回的数据为空，仍然把这个空结果进行缓存，但它的过期时间会很短，最长不超过五分钟。下次访问得到的是空数据。</span></li></ul></li><li><p><span>2、实时监控</span></p></li><li><p><span>3、布隆过滤器</span></p><ul><li><p><span>数据结构</span></p><ul><li><span>一个 bit 向量或者说 bit 数组或者bitmap + 一系列哈希函数</span></li><li><span>将所有可能存在的数据哈希到一个足够大的bitmap</span></li></ul></li><li><p><span>过程</span></p><ul><li><span>先将位数组初始化，每个位置为0。对集合的每个元素通过n个哈希函数进行映射，产生n个哈希值，将位数组对应的位置置1。</span></li><li><span>查询某个元素是否在集合中时，将这个元素通过哈希映射到位数组上，如果其中一个位不为1，则该元素不存在。</span></li></ul></li><li><p><span>为什么会产生误判？</span></p><ul><li><span>哈希函数具有不确定性，位数组的某个位上的1可能是多个元素共同映射的，不能判断某个元素一定在集合中，但能判断某个元素一定不在集合中。</span></li></ul></li><li><p><span>一个一定不存在的数据会被这个bitmap拦截掉，从而避免了对底层存储系统的查询压力</span></p></li></ul></li></ul></li></ul></li><li><p><span>缓存击穿</span></p><ul><li><p><span>定义</span></p><ul><li><span>某一个热点 key，在缓存过期的一瞬间，这时由于并发用户特别多，同时读缓存没读到数据，又同时去数据库去取数据，引起数据库压力瞬间增大，造成过大压力。</span></li></ul></li><li><p><span>解决方案</span></p><ul><li><p><span>（1）设置热点数据永不过期</span></p><ul><li><span>直接将缓存设置为不过期，然后由定时任务去异步加载数据，更新缓存</span></li></ul></li><li><p><span>（2）实时调整</span></p><ul><li><span>现场监控哪些数据热门，实时调整key的过期时长</span></li></ul></li><li><p><span>（3）加互斥锁</span></p><ul><li><p><span>只有第一个请求线程能拿到锁并执行数据库查询操作，其他的线程拿不到锁就阻塞等着，等到第一个线程将数据写入缓存后，直接走缓存。</span></p><ul><li><span>性能较差，线程阻塞</span></li></ul></li></ul></li></ul></li></ul></li><li><p><span>缓存预热</span></p><ul><li><p><span>定义</span></p><ul><li><span>系统上线后，将相关的缓存数据直接加载到缓存系统。避免在用户请求的时候，先查询数据库，然后再将数据缓存的问题！用户直接查询事先被预热的缓存数据。</span></li></ul></li><li><p><span>解决方案</span></p><ul><li><span>1、直接写个缓存刷新页面，上线时手工操作下</span></li><li><span>2、数据量不大，可以在项目启动的时候自动进行加载</span></li><li><span>3、定时刷新缓存</span></li></ul></li></ul></li><li><p><span>缓存降级</span></p><ul><li><p><span>定义</span></p><ul><li><p><span>访问量剧增、服务出现问题（如响应时间慢或不响应）或非核心服务影响到核心流程的性能时，仍然需要保证服务还是可用的，即使是有损服务。系统可以根据一些关键数据进行自动降级，也可以配置开关实现人工降级。</span></p></li><li><p><span>缓存失效或者缓存服务器挂掉的情况下，不去访问数据库，直接返回默认数据或者访问服务的内存数据</span></p><ul><li><span>比如双十一的时候淘宝购物车无法修改地址只能使用默认地址</span></li></ul></li></ul></li><li><p><span>目的</span></p><ul><li><span>保证核心服务可用，即使是有损的</span></li><li><span>防止Redis服务故障，导致数据库跟着一起发生雪崩问题</span></li></ul></li></ul></li></ul><h3 id='什么是发布订阅'><span>什么是发布订阅？</span></h3><ul><li><p><span>定义</span></p><ul><li><span>一种消息通信模式：发送者 (pub) 发送消息，订阅者 (sub) 接收消息。</span></li><li><span>Redis 客户端可以订阅任意数量的频道</span></li></ul></li><li><p><span>一个Redis中字符串value最多可以是512M</span></p></li><li><p><span>subscribe chanel01；</span>
+<span>publish chanel01 hello；</span></p></li></ul><h3 id='redis内存不足'><span>Redis内存不足？</span></h3><ul><li><span>修改配置文件 redis.conf 的 maxmemory 参数，增加 Redis 可用内存</span></li><li><span>设置缓存淘汰策略，提高内存的使用效率</span></li><li><span>使用 Redis 集群模式，提高存储量</span></li></ul><h3 id='如何解决key冲突'><span>如何解决key冲突？</span></h3><ul><li><span>Redis 如果 key 相同，后一个 key 会覆盖前一个 key</span></li><li><span>最好给 key 取好名区分开，可以按业务名和参数区分开取名，避免重复 key 导致的冲突</span></li></ul><h3 id='如何提高缓存命中率'><span>如何提高缓存命中率？</span></h3><ul><li><p><span>定义</span></p><ul><li><span>缓存命中率=从缓存中读取的次数/总读取次数</span></li></ul></li><li><p><span>解决方案</span></p><ul><li><span>提前加载数据到缓存中</span></li><li><span>增加缓存的存储空间，提高缓存的数据</span></li><li><span>调整缓存的存储数据类型</span></li><li><span>提升缓存的更新频率</span></li></ul></li></ul><h3 id='keys和scan的区别'><span>keys和scan的区别？</span></h3><ul><li><p><span>keys</span></p><ul><li><p><span>对键进行全量扫描</span></p></li><li><p><span>KEYS pattern</span></p></li><li><p><span>缺点</span></p><ul><li><span>数据量大时执行时间长</span></li></ul></li></ul></li><li><p><span>scan</span></p><ul><li><p><span>渐进式遍历键</span></p></li><li><p><span>SCAN cursor [MATCH pattern] [COUNT count]</span></p></li><li><p><span>注意事项</span></p><ul><li><span>当 SCAN 命令的游标参数被设置为 0 时， 服务器将开始一次新的迭代， 而当服务器向用户返回值为 0 的游标时， 表示迭代已结束.</span></li><li><span>返回的数量不一定</span></li><li><span>扫描的机构可能是重复的key</span></li><li><span>每次被调用之后， 都会向用户返回一个新的游标， 用户在下次迭代时需要使用这个新游标作为 SCAN 命令的游标参数， 以此来延续之前的迭代过程.</span></li></ul></li></ul></li><li><p><span>区别</span></p><ul><li><span>keys会阻塞主线程；scan分批次扫描，不会阻塞主线程</span></li><li><span>scan查找的数据可能存在重复，需要客户端操作去重</span></li></ul></li></ul><h3 id='是否使用过-redis-cluster-集群集群的原理是什么'><span>是否使用过 Redis Cluster 集群，集群的原理是什么？</span></h3><ul><li><span>1、所有的节点相互连接</span></li></ul><h3 id='redis-cluster-集群方案什么情况下会导致整个集群不可用'><span>Redis Cluster 集群方案什么情况下会导致整个集群不可用？</span></h3><ul><li><p><span>Redis 没有使用哈希一致性算法，而是使用哈希槽。</span></p></li><li><p><span>有 A，B，C 三个节点的集群,在没有复制模型的情况下,如果节点 B 失败了，那么整个集群就会以为缺少 5501-11000 这个范围的槽⽽不可⽤。</span></p></li><li><p><span>cluster-require-full-coverage</span></p><ul><li><p><span>yes </span></p><ul><li><span>如果某一段插槽的主从都挂掉，整个集群都挂掉</span></li></ul></li><li><p><span>no</span></p><ul><li><span>如果某一段插槽的主从都挂掉，该插槽数据全都不能使用，也无法存储</span></li></ul></li></ul></li></ul><h3 id='redis-常见性能问题和解决方案有哪些'><span>Redis 常见性能问题和解决方案有哪些？</span></h3><ul><li><p><span>1、Master 最好不要做任何持久化工作</span></p><ul><li><span>如果 Master 写内存快照，save 命令调度 rdbSave函数，会阻塞主线程的⼯作，当快照⽐较⼤时对性能影响是⾮常⼤的，会间断性暂停服务。</span></li></ul></li><li><p><span>2、为了主从复制的速度和连接的稳定性，Master 和 Slave 最好在同一个局域网内</span></p></li><li><p><span>3、尽量避免在压力很大的主库上增加从库</span></p></li><li><p><span>4、主从复制不要用图状结构，用单向链表结构更为稳定</span></p><ul><li><span>Master宕机可以立即启用Slave做Master</span></li></ul></li></ul><h3 id='什么情况下可能会导致-redis-阻塞'><span>什么情况下可能会导致 Redis 阻塞？</span></h3><ul><li><p><span>内部原因</span></p><ul><li><span>如果 Redis 主机的 CPU 负载过高，也会导致系统崩溃；</span></li><li><span>数据持久化占用资源过多；</span></li><li><span>对 Redis 的 API 或指令使用不合理，导致 Redis 出现问题</span></li></ul></li><li><p><span>外部原因</span></p><ul><li><span>服务器的原因，例如服务器的 CPU 线程在切换过程中竞争过大，内存出现问题、网络问题等。</span></li></ul></li></ul><h3 id='怎么使用-redis-实现消息队列'><span>怎么使用 Redis 实现消息队列？</span></h3><ul><li><span>一般使用 list 结构作为队列， rpush 生产消息， lpop 消费消息。当 lpop 没有消息的时候，要适当sleep 一会再重试。</span></li><li><span>list 还有个指令叫 blpop ，在没有消息的时候，它会阻塞住直到消息到来。</span></li><li><span>用 pub / sub 主题订阅者模式，可以实现1：N的消息队列</span></li></ul><h3 id='pub--sub-有什么缺点'><span>pub / sub 有什么缺点？</span></h3><ul><li><span>在消费者下线的情况下，生产的消息会丢失</span></li></ul><h3 id='redis-如何实现延时队列'><span>Redis 如何实现延时队列？</span></h3><ul><li><p><span>定义</span></p><ul><li><span>sortedset ，拿时间戳作为 score ，消息内容作为 key， 调用 zadd 来生产消息，消费者用zrangebyscore 指令获取 N 秒之前的数据轮询进行处理。</span></li></ul></li><li><p><span>实现</span></p><ul><li><span>String </span><em><span>KEY = &quot;myDelayQueue&quot;;</span>
+<span>jedis.zadd(</span></em><span>KEY, Instant.now().plusSeconds(2).getEpochSecond(), &quot;order_2&quot;);</span>
+<span>jedis.zadd(</span><em><span>KEY, Instant.now().plusSeconds(2).getEpochSecond(), &quot;order_3&quot;);</span>
+<span>// 当前时间</span>
+<span>Instant nowInstant = Instant.now();</span>
+<span>long lastSecond = nowInstant.plusSeconds(-1).getEpochSecond(); // 上一秒时间</span>
+<span>long nowSecond = nowInstant.getEpochSecond();</span>
+<span>// 查询当前时间的所有任务</span>
+<span>Set</span><String><span> data = jedis.zrangeByScore(</span></em><span>KEY, lastSecond, nowSecond);</span>
+<span>for (String item : data) {</span>
+<span>// 消费任务</span>
+<span>System.out.println(&quot;消费：&quot; + item);</span>
+<span>}</span>
+<span>// 删除已经执行的任务</span>
+<span>jedis.zremrangeByScore(_KEY, lastSecond, nowSecond);</span>
+<span>Thread.sleep(1000); // 每秒轮询一次</span></li></ul></li></ul><h3 id='redis-是单线程还是多线程-1'><span>Redis 是单线程还是多线程？</span></h3><ul><li><span>Redis 是单线程，主要是指 Redis 对外提供键值存储服务的主要流程，即网络 IO 和键值对读写是由⼀个线程来完成</span></li><li><span>比如持久化、 异步删除、集群数据同步等，是由额外的线程执⾏</span></li></ul><h3 id='selectpollepoll的区别'><span>select、poll、epoll的区别？</span></h3><ul><li><p><span>消息传递方式</span></p><ul><li><span>select+poll：内核需要将消息传递到用户空间，都需要内核拷贝动作</span></li><li><span>epoll：通过内核和用户空间共享一块内存来实现的</span></li></ul></li><li><p><span>效率</span></p><ul><li><span>select+poll：只会通知用户进程有FD就绪，但不确定具体是哪个FD，需要用户进程逐个遍历FD来确认</span></li><li><span>epoll：会在通知用户进程FD就绪的同时，把已就绪的FD写入用户空间(利用ep_poll_callback机制来监听FD状态)</span></li></ul></li><li><p><span>一个进程所能打开的最大连接数（FD）</span></p><ul><li><span>select：单个进程所能打开的最大连接数有FD_SETSIZE（1024）宏定义</span></li><li><span>poll：poll本质上和select没有区别，但是它没有最大连接数的限制，原因是它是基于链表来存储</span></li><li><span>epoll：使用红黑树保存要监听的FD</span></li></ul></li></ul><h3 id='save和bgsave的区别'><span>save和bgsave的区别？</span></h3><ul><li><span>save：在主线程中执行，会导致阻塞</span></li><li><span>bgsave：创建一个子进程，专门用于写入 RDB 文件，避免了主线程的阻塞</span></li></ul><h3 id='redis-是单线程还是多线程-2'><span>Redis 是单线程还是多线程？</span></h3><h2 id='自由主题'><span>自由主题</span></h2><p>&nbsp;</p></div></div>
+
+<script>(function(){var e=document.body.parentElement,t=[],n=null,i=document.body.classList.contains("typora-export-collapse-outline"),r=function(e,t,n){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var i=e.target;i&&i!=this;i=i.parentNode)if(i.matches(t)){!1===n.call(i,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)};function o(){return e.scrollTop}r("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),d(),!1}),r("click",".outline-item",function(e){var t=this.querySelector(".outline-label");if(location.hash="#"+t.getAttribute("href"),i){var n=this.closest(".outline-item-wrapper").classList;n.contains("outline-item-open")||n.add("outline-item-open"),c(),n.add("outline-item-active")}});var a,s,l=function(){var e=o();n=null;for(var i=0;i<t.length&&t[i][1]-e<60;i++)n=t[i]},c=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},d=function(){if(n){c();var e=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(n[0]):n[0])+'"]');if(e)if(i){var t=e.closest(".outline-item-open>ul>.outline-item-wrapper");if(t)t.classList.add("outline-item-active");else{for(var r=(e=e.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");r;)r=(e=r).parentElement.closest(".outline-item-wrapper");e.classList.add("outline-item-active")}}else e.closest(".outline-item-wrapper").classList.add("outline-item-active")}};window.addEventListener("scroll",function(e){a&&clearTimeout(a),a=setTimeout(function(){l(),d()},300)});var u=function(){s=setTimeout(function(){!function(){t=[];var e=o();document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(n=>{var i=n.getAttribute("id");t.push([i,e+n.getBoundingClientRect().y])})}(),l(),d()},300)};window.addEventListener("resize",function(e){s&&clearTimeout(s),u()}),u()})();</script><a id="O-switch" style="width: 50px; height: 50px; text-align: center; line-height:50px; position:fixed; bottom:0; opacity: 0.3;" title="显示/隐藏目录">〇</a>
+
+<script>
+var sidebar = document.getElementsByClassName("typora-export-sidebar")[0];var button = document.getElementById("O-switch");sidebar.style.display='none';button.onclick=function(){if(sidebar.style.display=='block')sidebar.style.display='none';else sidebar.style.display='block'};
+</script></body>
+</html>
